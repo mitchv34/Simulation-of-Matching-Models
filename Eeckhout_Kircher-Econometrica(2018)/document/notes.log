@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2021/Arch Linux) (preloaded format=pdflatex 2021.11.15)  16 NOV 2021 09:29
+This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2021/Arch Linux) (preloaded format=pdflatex 2021.11.15)  16 NOV 2021 14:07
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -812,6 +812,12 @@ File: md-frame-1.mdf 2013/07/01\ 1.9b: md-frame-1
 \c@mdf@env@ii=\count332
 \c@mdf@zref@counter=\count333
 Package zref Info: New property: mdf@pagevalue on input line 895.
+) (/usr/share/texmf-dist/tex/latex/bbm-macros/bbm.sty
+Package: bbm 1999/03/15 V 1.2 provides fonts for set symbols - TH
+LaTeX Font Info:    Overwriting math alphabet `\mathbbm' in version `bold'
+(Font)                  U/bbm/m/n --> U/bbm/bx/n on input line 33.
+LaTeX Font Info:    Overwriting math alphabet `\mathbbmss' in version `bold'
+(Font)                  U/bbmss/m/n --> U/bbmss/bx/n on input line 35.
 )
 \c@defin=\count334
 \c@teo=\count335
@@ -824,31 +830,31 @@ Package zref Info: New property: mdf@pagevalue on input line 895.
  (/home/mitchv34/Work/Multi-worker assignment mode/Eeckhout_Kircher-Econometrica(2018)/document/notes.aux)
 \openout1 = `notes.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 59.
-LaTeX Font Info:    ... okay on input line 59.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 59.
-LaTeX Font Info:    ... okay on input line 59.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 59.
-LaTeX Font Info:    ... okay on input line 59.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 59.
-LaTeX Font Info:    ... okay on input line 59.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 59.
-LaTeX Font Info:    ... okay on input line 59.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 59.
-LaTeX Font Info:    ... okay on input line 59.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 59.
-LaTeX Font Info:    ... okay on input line 59.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 59.
-LaTeX Font Info:    ... okay on input line 59.
-LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 59.
-LaTeX Font Info:    ... okay on input line 59.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 63.
+LaTeX Font Info:    ... okay on input line 63.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 63.
+LaTeX Font Info:    ... okay on input line 63.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 63.
+LaTeX Font Info:    ... okay on input line 63.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 63.
+LaTeX Font Info:    ... okay on input line 63.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 63.
+LaTeX Font Info:    ... okay on input line 63.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 63.
+LaTeX Font Info:    ... okay on input line 63.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 63.
+LaTeX Font Info:    ... okay on input line 63.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 63.
+LaTeX Font Info:    ... okay on input line 63.
+LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 63.
+LaTeX Font Info:    ... okay on input line 63.
 \c@maskedRefs=\count342
  (/usr/share/texmf-dist/tex/latex/apacite/english.apc
 File: english.apc 2013/07/21 v6.03 apacite language file
 LaTeX Info: Redefining \BPBI on input line 129.
 LaTeX Info: Redefining \BHBI on input line 130.
 )
-Package hyperref Info: Link coloring OFF on input line 59.
+Package hyperref Info: Link coloring OFF on input line 63.
  (/usr/share/texmf-dist/tex/latex/hyperref/nameref.sty
 Package: nameref 2021-04-02 v2.47 Cross-referencing by name of section
  (/usr/share/texmf-dist/tex/latex/refcount/refcount.sty
@@ -858,9 +864,10 @@ Package: gettitlestring 2019/12/15 v1.6 Cleanup title references (HO)
 )
 \c@section@level=\count343
 )
-LaTeX Info: Redefining \ref on input line 59.
-LaTeX Info: Redefining \pageref on input line 59.
-LaTeX Info: Redefining \nameref on input line 59.
+LaTeX Info: Redefining \ref on input line 63.
+LaTeX Info: Redefining \pageref on input line 63.
+LaTeX Info: Redefining \nameref on input line 63.
+ (/home/mitchv34/Work/Multi-worker assignment mode/Eeckhout_Kircher-Econometrica(2018)/document/notes.out) (/home/mitchv34/Work/Multi-worker assignment mode/Eeckhout_Kircher-Econometrica(2018)/document/notes.out)
 \@outlinefile=\write4
 \openout4 = `notes.out'.
 
@@ -915,216 +922,68 @@ LaTeX Info: Redefining \nameref on input line 59.
 Package caption Info: Begin \AtBeginDocument code.
 Package caption Info: subfig package v1.3 is loaded.
 Package caption Info: End \AtBeginDocument code.
-LaTeX Font Info:    Trying to load font information for U+msa on input line 62.
+LaTeX Font Info:    Trying to load font information for U+msa on input line 66.
 (/usr/share/texmf-dist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Trying to load font information for U+msb on input line 62.
+LaTeX Font Info:    Trying to load font information for U+msb on input line 66.
  (/usr/share/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
-)
-
-Package natbib Warning: Citation `becker1973theory' on page 1 undefined on input line 70.
-
-[1
+) [1
 
 {/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}] [2] [3]
-
-LaTeX Warning: Reference `labor_demand' on page 4 undefined on input line 160.
-
-
-Overfull \hbox (12.27997pt too wide) in paragraph at lines 160--162
+Overfull \hbox (12.27997pt too wide) in paragraph at lines 164--166
 [][]\OT1/cmr/bx/n/12 Definition. 1 \OT1/cmr/m/n/12 (Com-pet-i-tive Equi-lib-rium)\OT1/cmr/bx/n/12 . []\OT1/cmr/m/it/12 An equi-lib-rium is a tu-ple of func-tions $[]$
  []
 
-[4]
-
-LaTeX Warning: Reference `simple_max' on page 5 undefined on input line 203.
-
-
-LaTeX Warning: Reference `complex_max' on page 5 undefined on input line 217.
-
-[5]pdfTeX warning (ext4): destination with the same identifier (name{equation.2.1}) has been already used, duplicate ignored
+[4] [5]pdfTeX warning (ext4): destination with the same identifier (name{equation.2.1}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.255 \end{align}
+l.259 \end{align}
                  pdfTeX warning (ext4): destination with the same identifier (name{equation.2.2}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.255 \end{align}
+l.259 \end{align}
                   [6]pdfTeX warning (ext4): destination with the same identifier (name{equation.2.1}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.267 \end{align}
+l.271 \end{align}
                  pdfTeX warning (ext4): destination with the same identifier (name{equation.2.2}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.267 \end{align}
-                 
+l.271 \end{align}
+                  [7] [8] [9]
 
-LaTeX Warning: Reference `dif:foc2' on page 7 undefined on input line 285.
-
-
-LaTeX Warning: Reference `det_hessian' on page 7 undefined on input line 285.
-
-
-LaTeX Warning: Reference `trash_eq1' on page 7 undefined on input line 291.
-
-
-LaTeX Warning: Reference `dif:foc1' on page 7 undefined on input line 297.
-
-
-LaTeX Warning: Reference `trash_eq2' on page 7 undefined on input line 297.
-
-
-LaTeX Warning: Reference `foc1' on page 7 undefined on input line 307.
-
-[7]
-
-LaTeX Warning: Reference `trash_eq3' on page 8 undefined on input line 309.
-
-
-LaTeX Warning: Reference `pam_cond_simple' on page 8 undefined on input line 323.
-
-
-LaTeX Warning: Reference `pam_cond_simple' on page 8 undefined on input line 343.
-
-
-LaTeX Warning: Reference `derivative_x_' on page 8 undefined on input line 343.
-
-[8]
-
-LaTeX Warning: Reference `pam_cond' on page 9 undefined on input line 366.
-
-[9]
-
-LaTeX Warning: Reference `foc1' on page 10 undefined on input line 375.
-
-
-LaTeX Warning: Reference `proposition1' on page 10 undefined on input line 384.
-
-
-LaTeX Warning: Reference `pam_cond' on page 10 undefined on input line 384.
-
-
-LaTeX Warning: Reference `pam_cond_simple' on page 10 undefined on input line 384.
-
-
-LaTeX Warning: Reference `beta_y1' on page 10 undefined on input line 395.
-
-
-LaTeX Warning: Reference `beta_y2' on page 10 undefined on input line 395.
-
-
-LaTeX Warning: Reference `beta_y2' on page 10 undefined on input line 405.
+LaTeX Warning: Reference `proposition1' on page 10 undefined on input line 388.
 
 [10]
-
-LaTeX Warning: Reference `definition_varphi' on page 11 undefined on input line 417.
-
-
-LaTeX Warning: Reference `def_xi_1' on page 11 undefined on input line 422.
-
-
-LaTeX Warning: Reference `def_xi_2' on page 11 undefined on input line 422.
-
-
-LaTeX Warning: Reference `pam_cond_simple' on page 11 undefined on input line 431.
-
-
-LaTeX Warning: Reference `pam_cond_simple' on page 11 undefined on input line 431.
-
-
-LaTeX Warning: Reference `contradiction' on page 11 undefined on input line 440.
-
-
-LaTeX Warning: Reference `beta_y2' on page 11 undefined on input line 440.
-
-/home/mitchv34/Work/Multi-worker assignment mode/Eeckhout_Kircher-Econometrica(2018)/document/notes.tex:452: Undefined control sequence.
-<argument> ...d \implies \qquad r^y(x) = \mathbbm 
-                                                  {1}_{\{y=\mu (x)\}}\\ 
-l.452 \end{align*}
-                  
-The control sequence at the end of the top line
-of your error message was never \def'ed. If you have
-misspelled it (e.g., `\hobx'), type `I' and the correct
-spelling (e.g., `I\hbox'). Otherwise just continue,
-and I'll forget about whatever was undefined.
-
-/home/mitchv34/Work/Multi-worker assignment mode/Eeckhout_Kircher-Econometrica(2018)/document/notes.tex:452: Undefined control sequence.
-<argument> ...d \implies \qquad r^y(x) = \mathbbm 
-                                                  {1}_{\{y=\mu (x)\}}\\ 
-l.452 \end{align*}
-                  
-The control sequence at the end of the top line
-of your error message was never \def'ed. If you have
-misspelled it (e.g., `\hobx'), type `I' and the correct
-spelling (e.g., `I\hbox'). Otherwise just continue,
-and I'll forget about whatever was undefined.
-
-[11]
-
-LaTeX Warning: Reference `mkt_clearing_eq' on page 12 undefined on input line 475.
-
-
-LaTeX Warning: Reference `foc2' on page 12 undefined on input line 492.
-
-
-LaTeX Warning: Reference `dif:foc2' on page 12 undefined on input line 498.
-
-
-LaTeX Warning: Reference `eq_w' on page 12 undefined on input line 508.
-
-[12]
-
-LaTeX Warning: Reference `eq_mu' on page 13 undefined on input line 516.
-
-
-LaTeX Warning: Reference `eq_mu' on page 13 undefined on input line 522.
-
-
-LaTeX Warning: Reference `eq_w' on page 13 undefined on input line 522.
-
-
-LaTeX Warning: Reference `eq_th' on page 13 undefined on input line 522.
-
-No file notes.bbl.
-
-Package natbib Warning: There were undefined citations.
-
-[13] (/home/mitchv34/Work/Multi-worker assignment mode/Eeckhout_Kircher-Econometrica(2018)/document/notes.aux)
+LaTeX Font Info:    Trying to load font information for U+bbm on input line 456.
+ (/usr/share/texmf-dist/tex/latex/bbm-macros/ubbm.fd
+File: ubbm.fd 1999/03/15 V 1.2 Font definition for bbm font - TH
+) [11] [12] (/home/mitchv34/Work/Multi-worker assignment mode/Eeckhout_Kircher-Econometrica(2018)/document/notes.bbl [13]) [14] (/home/mitchv34/Work/Multi-worker assignment mode/Eeckhout_Kircher-Econometrica(2018)/document/notes.aux)
 
 LaTeX Warning: There were undefined references.
 
-
-LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
-
-
-Package rerunfilecheck Warning: File `notes.out' has changed.
-(rerunfilecheck)                Rerun to get outlines right
-(rerunfilecheck)                or use package `bookmark'.
-
-Package rerunfilecheck Info: Checksums for `notes.out':
-(rerunfilecheck)             Before: <no file>
-(rerunfilecheck)             After:  5633B90B95032716B2441B3BD9866C70;1964.
+Package rerunfilecheck Info: File `notes.out' has not changed.
+(rerunfilecheck)             Checksum: 5633B90B95032716B2441B3BD9866C70;1964.
  )
 (\end occurred inside a group at level 1)
 
 ### semi simple group (level 1) entered at line 21 (\begingroup)
 ### bottom level 
 Here is how much of TeX's memory you used:
- 26563 strings out of 478994
- 469487 string characters out of 5864750
- 851572 words of memory out of 5000000
- 43477 multiletter control sequences out of 15000+600000
- 418853 words of font info for 82 fonts, out of 8000000 for 9000
+ 26632 strings out of 478994
+ 471389 string characters out of 5864750
+ 853831 words of memory out of 5000000
+ 43527 multiletter control sequences out of 15000+600000
+ 419248 words of font info for 85 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 99i,20n,102p,548b,11663s stack positions out of 5000i,500n,10000p,200000b,80000s
-{/usr/share/texmf-dist/fonts/enc/dvips/cm-super/cm-super-ts1.enc}</usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx8.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmbxti10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi6.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmr17.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy6.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmti12.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/latxfont/line10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb></usr/share/texmf-dist/fonts/type1/public/cm-super/sfrm1200.pfb>
-Output written on "/home/mitchv34/Work/Multi-worker assignment mode/Eeckhout_Kircher-Econometrica(2018)/document/notes.pdf" (13 pages, 203867 bytes).
+ 99i,20n,102p,548b,11688s stack positions out of 5000i,500n,10000p,200000b,80000s
+ </home/mitchv34/.texlive/texmf-var/fonts/pk/ljfour/public/bbm/bbm12.600pk>{/usr/share/texmf-dist/fonts/enc/dvips/cm-super/cm-super-ts1.enc}</usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmbxti10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi6.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmr17.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmr6.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy6.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmti12.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/latxfont/line10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb></usr/share/texmf-dist/fonts/type1/public/cm-super/sfrm1200.pfb>
+Output written on "/home/mitchv34/Work/Multi-worker assignment mode/Eeckhout_Kircher-Econometrica(2018)/document/notes.pdf" (14 pages, 209151 bytes).
 PDF statistics:
- 200 PDF objects out of 1000 (max. 8388607)
- 166 compressed objects within 2 object streams
- 64 named destinations out of 1000 (max. 500000)
- 13 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 300 PDF objects out of 1000 (max. 8388607)
+ 256 compressed objects within 3 object streams
+ 67 named destinations out of 1000 (max. 500000)
+ 125 words of extra memory for PDF output out of 10000 (max. 10000000)
 

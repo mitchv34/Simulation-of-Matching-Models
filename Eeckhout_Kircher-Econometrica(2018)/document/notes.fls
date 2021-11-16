@@ -1208,6 +1208,17 @@ INPUT /usr/share/texmf-dist/tex/latex/mdframed/md-frame-1.mdf
 INPUT /usr/share/texmf-dist/tex/latex/mdframed/md-frame-1.mdf
 INPUT /usr/share/texmf-dist/tex/latex/mdframed/md-frame-1.mdf
 INPUT /usr/share/texmf-dist/tex/latex/natbib/natbib.sty
+INPUT /usr/share/texmf-dist/tex/latex/bbm-macros/bbm.sty
+INPUT /usr/share/texmf-dist/tex/latex/bbm-macros/bbm.sty
+INPUT /usr/share/texmf-dist/tex/latex/bbm-macros/bbm.sty
+INPUT /usr/share/texmf-dist/tex/latex/bbm-macros/bbm.sty
+INPUT /usr/share/texmf-dist/tex/latex/bbm-macros/bbm.sty
+INPUT /usr/share/texmf-dist/tex/latex/bbm-macros/bbm.sty
+INPUT /usr/share/texmf-dist/tex/latex/bbm-macros/bbm.sty
+INPUT /usr/share/texmf-dist/tex/latex/bbm-macros/bbm.sty
+INPUT /usr/share/texmf-dist/tex/latex/bbm-macros/bbm.sty
+INPUT /usr/share/texmf-dist/tex/latex/bbm-macros/bbm.sty
+INPUT /usr/share/texmf-dist/tex/latex/bbm-macros/bbm.sty
 INPUT /home/mitchv34/Work/Multi-worker assignment mode/Eeckhout_Kircher-Econometrica(2018)/document/notes.aux
 INPUT /home/mitchv34/Work/Multi-worker assignment mode/Eeckhout_Kircher-Econometrica(2018)/document/notes.aux
 INPUT /home/mitchv34/Work/Multi-worker assignment mode/Eeckhout_Kircher-Econometrica(2018)/document/notes.aux
@@ -1253,8 +1264,18 @@ INPUT /usr/share/texmf-dist/tex/generic/gettitlestring/gettitlestring.sty
 INPUT /usr/share/texmf-dist/tex/generic/gettitlestring/gettitlestring.sty
 INPUT /usr/share/texmf-dist/tex/latex/kvoptions/kvoptions.sty
 INPUT /usr/share/texmf-dist/tex/generic/ltxcmds/ltxcmds.sty
-OUTPUT /home/mitchv34/Work/Multi-worker assignment mode/Eeckhout_Kircher-Econometrica(2018)/document/notes.out
+INPUT /home/mitchv34/Work/Multi-worker assignment mode/Eeckhout_Kircher-Econometrica(2018)/document/notes.out
+INPUT /home/mitchv34/Work/Multi-worker assignment mode/Eeckhout_Kircher-Econometrica(2018)/document/notes.out
+INPUT /home/mitchv34/Work/Multi-worker assignment mode/Eeckhout_Kircher-Econometrica(2018)/document/notes.out
+INPUT /home/mitchv34/Work/Multi-worker assignment mode/Eeckhout_Kircher-Econometrica(2018)/document/notes.out
+INPUT /home/mitchv34/Work/Multi-worker assignment mode/Eeckhout_Kircher-Econometrica(2018)/document/notes.out
+INPUT /home/mitchv34/Work/Multi-worker assignment mode/Eeckhout_Kircher-Econometrica(2018)/document/notes.out
+INPUT /home/mitchv34/Work/Multi-worker assignment mode/Eeckhout_Kircher-Econometrica(2018)/document/notes.out
+INPUT /home/mitchv34/Work/Multi-worker assignment mode/Eeckhout_Kircher-Econometrica(2018)/document/notes.out
 OUTPUT /home/mitchv34/Work/Multi-worker assignment mode/Eeckhout_Kircher-Econometrica(2018)/document/notes.pdf
+INPUT /home/mitchv34/Work/Multi-worker assignment mode/Eeckhout_Kircher-Econometrica(2018)/document/notes.out
+INPUT /home/mitchv34/Work/Multi-worker assignment mode/Eeckhout_Kircher-Econometrica(2018)/document/notes.out
+OUTPUT /home/mitchv34/Work/Multi-worker assignment mode/Eeckhout_Kircher-Econometrica(2018)/document/notes.out
 INPUT /usr/share/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
 INPUT /usr/share/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
 INPUT /usr/share/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
@@ -1324,12 +1345,23 @@ INPUT /var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map
 INPUT /usr/share/texmf-dist/fonts/tfm/public/cm/cmbxti10.tfm
 INPUT /usr/share/texmf-dist/fonts/tfm/public/cm/cmti8.tfm
 INPUT /usr/share/texmf-dist/fonts/tfm/public/cm/cmti7.tfm
+INPUT /usr/share/texmf-dist/tex/latex/bbm-macros/ubbm.fd
+INPUT /usr/share/texmf-dist/tex/latex/bbm-macros/ubbm.fd
+INPUT /usr/share/texmf-dist/tex/latex/bbm-macros/ubbm.fd
+INPUT /usr/share/texmf-dist/tex/latex/bbm-macros/ubbm.fd
+INPUT /usr/share/texmf-dist/fonts/tfm/public/bbm/bbm12.tfm
+INPUT /usr/share/texmf-dist/fonts/tfm/public/bbm/bbm8.tfm
+INPUT /usr/share/texmf-dist/fonts/tfm/public/bbm/bbm6.tfm
+INPUT /home/mitchv34/Work/Multi-worker assignment mode/Eeckhout_Kircher-Econometrica(2018)/document/notes.bbl
+INPUT /home/mitchv34/Work/Multi-worker assignment mode/Eeckhout_Kircher-Econometrica(2018)/document/notes.bbl
+INPUT /home/mitchv34/Work/Multi-worker assignment mode/Eeckhout_Kircher-Econometrica(2018)/document/notes.bbl
+INPUT /home/mitchv34/Work/Multi-worker assignment mode/Eeckhout_Kircher-Econometrica(2018)/document/notes.bbl
 INPUT /home/mitchv34/Work/Multi-worker assignment mode/Eeckhout_Kircher-Econometrica(2018)/document/notes.aux
 INPUT /home/mitchv34/Work/Multi-worker assignment mode/Eeckhout_Kircher-Econometrica(2018)/document/notes.out
 INPUT /home/mitchv34/Work/Multi-worker assignment mode/Eeckhout_Kircher-Econometrica(2018)/document/notes.out
+INPUT /home/mitchv34/.texlive/texmf-var/fonts/pk/ljfour/public/bbm/bbm12.600pk
 INPUT /usr/share/texmf-dist/fonts/enc/dvips/cm-super/cm-super-ts1.enc
 INPUT /usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb
-INPUT /usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx8.pfb
 INPUT /usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmbxti10.pfb
 INPUT /usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb
 INPUT /usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb
@@ -1337,6 +1369,7 @@ INPUT /usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi6.pfb
 INPUT /usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb
 INPUT /usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb
 INPUT /usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmr17.pfb
+INPUT /usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmr6.pfb
 INPUT /usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb
 INPUT /usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb
 INPUT /usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy6.pfb
