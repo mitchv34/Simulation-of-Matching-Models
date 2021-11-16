@@ -54,7 +54,7 @@ md"""
 
 # ╔═╡ 59ee7ad5-722f-43eb-af12-247a86ead7a7
 md"""
-First we write the model as a pure symblyc expression if the variables `x, y, r, l` and the parameters `ω_A, ω_B, σ_A`.
+First, we write the model as a pure symbolic expression if the variables `x, y, r, l` and the parameters `ω_A, ω_B, σ_A`.
 """
 
 # ╔═╡ 70a719fc-7a45-416b-8869-5f79fe7f2be1

@@ -29,13 +29,30 @@ end
     F::Num # The production function
 
     # Distribution of types
+    type_dist :: NamedTuple # Distribution of types
 
+    # Type of assortativity of the model
+    assortativity::String # Type of assortativity of the model
+
+    # Model solver
+    solver::String # Model solver
 
 end
 
+mutable struct Solver
+
+    # Structure containing the model solver
+
+    # Solution
+    
+end
+
+# Structure containing the model solution
+mutable struct Soution
+end
 
 # This function initializes the model
-function model = initialize_model(vars, params)
+function model = initialize_model()
     # Define the production function
     @variables x, y, l, r
     @parameters ω_A, ω_B, σ_A
@@ -58,8 +75,17 @@ function model = initialize_model(vars, params)
     wuni = Uniform(x_bounds[1], x_bounds[2]) 
     funi = Uniform(y_bounds[1], y_bounds[2])
 
+    type_dist = (workers = wuni, firms = funi)
+    
+    # Define the assortativity of the model
+    # TODO: Infer the assortativity from the production function
+    assortativity = "positive"
+
+    # Create the solver of the model
+
+
     # Define the model
-    model = Model(vars, params, F)
+    model = Model(vars, params, F, type_dist, assortativity)
 end
 
 
