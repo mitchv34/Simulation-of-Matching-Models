@@ -1,0 +1,539 @@
+\documentclass[12pt]{article}
+\usepackage[utf8]{inputenc}
+%\usepackage[left=3cm, right=2.5cm, top=2.5cm, bottom=2.5cm]{geometry}e}
+\usepackage[utf8]{inputenc}
+\usepackage[spanish,english]{babel}
+\usepackage{apacite}
+\usepackage[round]{natbib}
+\usepackage{hyperref}
+\usepackage{float}
+\usepackage{svg}
+\usepackage[margin = 1in, top=2cm]{geometry}% Margins
+\setlength{\parindent}{2em}
+\setlength{\parskip}{0.2em}
+\usepackage{setspace} % Setting the spacing between lines
+\usepackage{amsthm, amsmath, amsfonts, mathtools, amssymb, bm} % Math packages 
+\usepackage{svg}
+\usepackage{graphicx}
+\usepackage{epstopdf}
+\usepackage{subfig} % Manipulation and reference of small or sub figures and tables
+\usepackage{hyperref} % To create hyperlinks within the document
+\spacing{1.15}
+\usepackage{appendix}
+\usepackage{xcolor}
+\usepackage{cancel}
+\usepackage{enumerate} 
+\usepackage[shortlabels]{enumitem}
+\usepackage{optidef}
+\usepackage[framemethod=TikZ]{mdframed}
+
+\usepackage[round]{natbib}
+%\bibliographystyle{plainnat}
+\bibliographystyle{apacite}
+
+
+\newtheorem{defin}{Definition.}
+\newtheorem{teo}{Theorem. }
+\newtheorem{lema}{Lemma. }
+\newtheorem{coro}{Corolary. }
+\newtheorem{prop}{Proposition. }
+\theoremstyle{definition}
+\newtheorem{examp}{Example. }
+\newtheorem{problem}{Problem}
+\newtheorem{subproblem}{}[problem]
+% \numberwithin{problem}{subsection} 
+
+\newcommand{\card}{\operatorname{card}}
+\newcommand{\qiq}{\qquad \implies \qquad}
+\newcommand{\qiffq}{\qquad \iff \qquad}
+\newcommand{\qaq}{\qquad \textbf{and} \qquad}
+\newcommand{\qoq}{\qquad \textbf{or} \qquad}
+\newcommand{\settf}{\text{ \emph{:} }}
+
+
+
+\title{Eeckhout and Kircher (2018)}
+\author{Mitchell Valdés-Bobes}
+\date{\today}
+
+\begin{document}
+
+\maketitle
+
+\section{Research Question}
+Provide a unifying theory of production with a trade-off between hiring more versus better workers.
+
+\subsection{Results}
+\begin{itemize}
+    \item  A sorting condition that captures the trade-off between quantity and quality of workers. 
+\begin{itemize}
+    \item Generalizing \cite{becker1973theory}.
+\end{itemize}
+    \item  A model nests many existing models.
+    \begin{itemize}
+        \item \textcolor{red}{WHICH}
+    \end{itemize}
+\end{itemize}
+
+The model should deliver the following results:
+\begin{itemize}
+    \item Characterization of matching in equilibrium.
+    \begin{itemize}
+        \item When is matching assortative \textbf{(PAM)} or \textbf{(NAM)}?
+        \item \textcolor{red}{When worker types are increasing or decreasing in firm size.}
+    \end{itemize}
+\end{itemize}
+
+\section{Model}
+This is a many-to-one matching:
+
+\subsection{Model set-up}
+\subsubsection{Demographics}
+\begin{itemize}
+    \item  \textbf{Workers} indexed by \textit{unidimensional} skill $x\in[\underline{x},  \bar{x} ]\subset \mathbb{R}_+$
+    \begin{itemize}
+    	\item  \textit{CDF} $H^w(x)$ and \textit{PDF} $h^w$  
+	\end{itemize}
+    \item  \textbf{Firms} indexed by \textit{unidimensional} productivity $y\in[\underline{y},  \bar{y} ]\subset \mathbb{R}_+$
+    \begin{itemize}
+	    \item \textit{CDF} $H^f(x)$ and \textit{PDF} $h^f$  
+	\end{itemize}
+\end{itemize}
+
+\subsubsection{Preferences}
+This model with linear utility where :
+\begin{itemize}
+    \item \textbf{Workers} care about their wage and there is no disutility of work.
+    \item  \textbf{Firms} maximize their profits.
+\end{itemize}
+
+\subsubsection{Technology}
+\begin{itemize}
+    \item The output produced by a firm of type $y$ that hires $l$ workers of type $x$ and dedicates a fraction $r$ of its resources to that type of workers is:$$F(x,y,l,r)$$
+    \begin{itemize}
+        \item $(x,y)$ are quality variables and $(l,r)$ are quantity variables.
+	    \item The resource might reflect the time endowment of an entrepreneur who spends time interacting with and supervising her employees.
+	    \begin{itemize}
+		    \item Under this interpretation buying resources in the market (like capital) is excluded from the problem.
+	    \end{itemize}
+	    \item The quality might refer to the value of the final output.
+    \end{itemize}
+    \item $F$ is strictly increasing and strictly concave in each quantity variable in the interior of the type space, $0$ resources produce $0$, and standard Inada conditions apply.
+     \item  Consider the cross-partials of the output function:
+    \begin{itemize}
+	  \item $F_{xy}$ If positive, means that higher firm types have, ceteris paribus, a higher marginal return for matching with higher worker types.
+	  \item $F_{yl}$ If it is large, it means that higher firm types have a higher marginal valuation.
+      \item $F_{xr}$ Expresses how the marginal product of resources spent on workers varies with worker type.
+	  \item  $F_{lr}$ Captures the extent to which additional labor decreases the value of output.
+    \end{itemize}
+
+    \item  $F$ has constant returns to scale in $l$ and $r$.
+    \begin{itemize}
+	    \item  Constant returns to scale imply that we can write $F$ in terms of $\theta=l/r$ amount of workers per unit of resource or \textbf{intensity}:$$f(x,y,\theta):=F(x,y,\theta,1)\qiq F(x,y,l,r) = rf(x,y,\theta)$$
+	    \item Either $F$ or $f$ can be used as the primitive of the model.
+    \end{itemize}
+\end{itemize}
+
+\subsection{Equilibrium}
+The equilibrium concept used is the competitive equilibrium.
+\subsubsection{ Firm's problem }
+\begin{itemize}
+    \item  Firms choose two distributions
+    \begin{itemize}
+    	\item   $\mathcal{L}^y(x)$ the number of workers of each type, note that $$\mathcal{L}^y(x) = \int_{\underline{x}}^xl^y(\tilde{x})dH^w(\tilde{x})$$
+    	\item   $\mathcal{R}^y(x)$ the amount of resources dedicated to each type, again$$\mathcal{R}^y(x) = \int_{\underline{x}}^xr^y(\tilde{x})dH^w(\tilde{x})$$
+    		\item  If $r^y(x) = 0$ then the firm does not hire that type of worker.
+    	\item  For any $x\in[\underline{x}, \bar{x}]$ the following holds:$$l^y(x) = \theta^y(x)r^y(x)$$ integrating we have
+    	\begin{equation}\label{labor_demand}
+    	\int_{\underline{x}}^xl^y(\tilde{x})dH^w(\tilde{x}) = \int_{\underline{x}}^x\theta^y(\tilde{x})r^y(\tilde{x})dH^w(\tilde{x}) \quad \implies \quad \mathcal{L}^y(x) = \int_{\underline{x}}^x\theta^y(\tilde{x})d\mathcal{R}^y(\tilde{x}).
+    	\end{equation}
+        \item This means that we can move conveniently between the two formulations the problem since:
+        \[\int_{\underline{x}}^{x} f\left(x, y, \theta^{y}(x)\right) d \mathcal{R}^{y}(x) = \int_{\underline{x}}^{x} F\left(x, y, l^y(x), r^y(x)\right) d \mathcal{H}^{w}(x)\]
+    	\end{itemize}
+    \item  Firms maximize the difference between output produced and wages paid to workers.  
+\end{itemize}
+\subsubsection{ Competitive Equilibrium}
+Note that for any interval of worker types $(x' , x]$, a firm of type $y$ has a demand for such workers of $\mathcal{L}^y(x)-\mathcal{L}^y(x')$ then the aggregate demand for such workers is the integral over all firms $y\in \mathcal{Y}$. 
+This implies a way to evaluate if a labor demand schedule $\{\mathcal{L}^y\}_{y\in \mathcal{Y}}$ is feasible:$$\int_{y}\left[\mathcal{L}^{y}(x)-\mathcal{L}^{y}\left(x^{\prime}\right)\right] d H^{f} \leq H^{w}(x)-H^{w}\left(x^{\prime}\right) \qquad \forall  (x',x]\subseteq\mathcal{X}$$
+
+\begin{defin}[Competitive Equilibrium]
+An equilibrium is a tuple of functions $\left(w, \theta^{y}, \mathcal{R}^{y}, \mathcal{L}^{y}\right)$ consisting of a non-negative wage schedule $w(x)$ as well as intensity functions $\theta^{y}(x)$ and resource allocations $\mathcal{R}^{y}(x)$ with associated feasible labor demands $\mathcal{L}^{y}(x)$ (determined as in \eqref{labor_demand}) such that:
+\begin{enumerate}
+    \item \textbf{Optimality:} Given the wage schedule $w(x)$, for any $y$, the combination $\left(\theta^{y}, \mathcal{R}^{y}\right)$ solves:$$\max _{\theta y, \mathcal{R}^{y}} \int\left[f\left(x, y, \theta^{y}(x)\right)-w(x) \theta^{y}(x)\right] d \mathcal{R}^{y}(x)$$
+    \item \textbf{Market Clearing:} For any $(x',x]\subseteq\mathcal{X}$
+    $$\text{If } w(x)>0 \text{ a.e in } (x', x]  \quad \implies \quad   \int_{y}\left[\mathcal{L}^{y}(x)-\mathcal{L}^{y}\left(x^{\prime}\right)\right] d H^{f} = H^{w}(x)-H^{w}\left(x^{\prime}\right) $$
+\end{enumerate}
+
+\end{defin}
+
+\subsubsection{Characterization of Equilibrium}
+Now that we have defined equilibrium is time to characterize it, namely find conditions that describe it. In this case we are interested in answering the following questions:
+\begin{itemize}
+    \item  When do better firms hire \textbf{better} workers?
+    \item  How are wages determined?
+    \item  When do better firms employ \textbf{more} workers?
+    \item  How is that affected by quantity-biased technological change?
+\end{itemize}
+
+ Before moving forward, we need a definition of assortativity in this context:
+
+\begin{defin}[Assortative Matching:] 
+We say that a matching between firms is PAM (NAM) if Higher type firms hire higher type workers, i.e., $y>y'$ then, $x$ in the support of $\mathcal{L}^y$ and $x'$ in the support of $\mathcal{L}^{y'}$ only if $x\geq (\leq) x'$.
+\end{defin}
+
+
+The following proposition establish that in an assortative (assume PAM wolg) equilibrium firms hire just one type of worker:
+
+\begin{prop}\label{prop1}
+If output $F$ is strictly increasing in $x$ and $y$ and the type distributions have nonzero continuous densities, then almost all active firm types y hire exactly one worker type and reach unique size $l(y)$ in an assortative equilibrium.
+\end{prop}
+
+Note that this is equivalent to having an injective matching function $\mu: \tilde{\mathcal{X}} \rightarrow \tilde{\mathcal{Y}}$, where $\tilde{\mathcal{X}}$ and $\tilde{\mathcal{Y}}$ are the subset hired workers and active firms. Furthermore as we will show in the proof the set $\tilde{\mathcal{X}}$ have to be an interval.
+\begin{proof}
+This proof is in two parts, first we start by showing that if a firm $y$ that uses strategy $(\theta^y, \mathcal{R}^y)$ to solve the problem 
+\begin{equation}\label{complex_max}
+\max _{\theta y, \mathcal{R}^{y}} \int\left[f\left(x, y, \theta^{y}(x)\right)-w(x) \theta^{y}(x)\right] d \mathcal{R}^{y}(x)
+\end{equation}
+almost everywhere in $\text{supp } \mathcal{R}^y$; then for every hired worker the combination $(x,\theta^y(x))$ have to be optimal, i.e:
+
+\begin{equation}\label{simple_max}
+(x,\theta^y(x)) \in \arg\max \left\{ f(\tilde{x}, y, \tilde{\theta})-\tilde{\theta} w(\tilde{x}) \right \} \qquad \forall x\in \text{supp}\mathcal{R}^y
+\end{equation}
+
+We will proceed by contradiction, and suppose that there is a set of hired workers $\tilde{\mathcal{X}}$ for which their assigned resources do not solve \eqref{simple_max}. Start by defining the following sets:
+
+$$\mathcal{X}^*=\left\{x\in \mathcal{X}\mid (x,\theta^*(x)) \in \arg\max \left\{ f(\tilde{x}, y, \tilde{\theta})-\tilde{\theta} w(\tilde{x}) , \text{for some } \theta^*\right \} \right\}$$ $$\tilde{\mathcal{X}} = \mathcal{X} / \mathcal{X}^*$$
+
+Consider any $x^* \in \mathcal{X}^*$ and a strategy where the firm places or the resources on $x^*$ at intensity $\theta^*$ we have:
+$$f(x,y,\theta^y(x)) = f(x^*, y, \theta^*) \qquad \forall x\in \mathcal{X}^*$$
+$$f(x,y,\theta^y(x)) < f(x^*, y, \theta^*) \qquad \forall x\in \tilde{\mathcal{X}}$$
+Note that the profits pf the firm are:
+\begin{align*}
+\int_{\mathcal{X}^*}\left[f(x,y,\theta^y(x)) - w(x)\theta^y(x)\right]d\mathcal{R}^y(x) &+ \int_{\tilde{\mathcal{X}}}\left[f(x,y,\theta^y(x)) - w(x)\theta^y(x)\right]d\mathcal{R}^y(x)\\
+&<\\
+\int_{\mathcal{X}^*}\left[f(x^*,y,\theta^*) - w(x^*)\theta^*\right]d\mathcal{R}^y(x) &+ \int_{\tilde{\mathcal{X}}}\left[f(x^*,y,\theta^*) - w(x^*)\theta^*\right]d\mathcal{R}^y(x)
+\end{align*}
+
+The firm can strictly increase it's profits, therefore the original strategy is not a solution of \eqref{complex_max}.
+
+\textbf{Note} that as an implication of the above we have that in equilibrium if a worker is hired by a firm then all workers of a higher type must have strictly positive wages.
+
+To show that this is the case, suppose otherwise: $$\exists x\in \text{supp} \mathcal{L}^y \quad \text{with} \quad w(x')=0 \quad \text{for some }x'>x$$ then the firm could strictly increase its profits by changing the strategy to only hire type $x'$ instead of $x$ workers, those workers will increase the output at a lower cost (of $0$).
+
+
+Next we will use the fact that we just showed about wages of hired workers to prove that no firm will hire more than one type of worker if the equilibrium matching is PAM.
+
+Assume that the firm $y$ is active in the market and $$\exists\: x < \tilde{x} \in \text{supp}\mathcal{L}^y$$
+Consider two firms $y''>y>y'$, since since we are assuming a PAM equilibrium then:
+
+\begin{align*}
+y''>y \text{ and } x''\in\text{supp}\mathcal{L}^{y''} \quad &\implies \quad x''\geq \tilde{x}\\
+y'<y \text{ and } x'\in\text{supp}\mathcal{L}^{y'} \quad &\implies \quad x'\leq x
+\end{align*}
+
+
+This means that the firm $y$ is the only firm with positive labor demand in the interval $(x,\tilde{x})$.
+
+This means that the aggregate labor demand in $(x,\tilde{x})$ has measure $0$ then by market clearing it must be that $w(\hat{x})=0$ for all $\hat{x}\in(x.\tilde{x})$.
+
+This is a contradiction with what we had before therefore it must be true that the firm $y$ only hires one type of worker in equilibrium.
+
+There is a unique optimal choice of $\theta$ since it is obtained by solving an strictly concave optimization problem.
+
+\end{proof}
+
+\subsubsection{Assortativity Characterization}
+
+We can restrict our attention to the problem: $$\max_{x,\theta(x)}\:  f(x, \mu(x), \theta(x))-\theta(x) w(x)$$
+Where $y\in\mu(x)$ is the firm that chooses the worker type $x$. A necessary condition for equilibrium assignment is the following set of first order condtions:
+
+\begin{subequations}
+\label{foc}
+\begin{align}
+f_{\theta}(x, \mu(x), \theta(x))-w(x) &=0 \label{foc1}\\
+f_{x}(x, \mu(x), \theta(x))-\theta(x) w^{\prime}(x) &=0 \label{foc2}
+\end{align}
+\end{subequations}
+
+\textbf{Note:} From now on arguments of $f$ will be suppressed for clarity of exposition.
+
+The implicit function theorem, guarantees that both $\theta(x)$ and $w'(x)$ are differentiable with respect to $x$. Implicit differentiation give:
+
+\begin{subequations}
+\label{dif:foc}
+\begin{align}
+f_{x \theta}+\mu^{\prime}(x) f_{y \theta}+\theta^{\prime}(x) f_{\theta \theta}-w^{\prime}(x) &=0\label{dif:foc1}  \\
+f_{x x} + \mu^{\prime}(x) f_{x y} + \theta^{\prime}(x)\left[f_{x \theta}-w^{\prime}(x)\right]-\theta(x) w^{\prime \prime}(x) &=0 \label{dif:foc2}
+\end{align}
+\end{subequations}
+
+Note that we want to characterize a \textbf{PAM} equilibrium, where higher type firms hire higher type workers i.e. $\mu'(x)>0$ (the condition for \textbf{(NAM)} is analogous). To find a necessary condition on the production function for \textbf{PAM} we will use the second order sufficient condition for maximization, start by writing the Hessian:
+
+
+$$\mathbf{H}=\left(\begin{array}{cc}
+f_{\theta \theta} & f_{x \theta}-w^{\prime}(x) \\
+f_{x \theta}-w^{\prime}(x) & f_{x x}-\theta(x) w^{\prime \prime}(x)
+\end{array}\right)$$
+
+Since $f_{\theta \theta} < 0$ by convexity then we only need the determinant of the Hessian to be positive: 
+
+\begin{equation}
+f_{\theta \theta}\left[f_{x x}-\theta(x)  w^{\prime \prime}(x)\right]-\left(f_{x \theta}-w^{\prime}(x)\right)^{2} > 0 \label{det_hessian}
+\end{equation}
+
+
+Plug \eqref{dif:foc2} in \eqref{det_hessian}:
+
+\begin{equation}
+-\mu^{\prime}(x) f_{\theta \theta}f_{x y}-\theta^{\prime}(x) f_{\theta \theta}\left[f_{x \theta}-w^{\prime}(x)\right]-\left(f_{x \theta}-w^{\prime}(x)\right)^{2} > 0 \label{trash_eq1}
+\end{equation}
+
+Re-arrange \eqref{trash_eq1} to get:
+
+\begin{equation}
+-\mu^{\prime}(x) f_{\theta \theta}f_{x y}-\left(f_{x \theta}-w^{\prime}(x)\right)\Big[\theta^{\prime}(x) f_{\theta \theta}+\left(f_{x \theta}-w^{\prime}(x)\right)\Big] > 0 \qquad \label{trash_eq2}
+\end{equation}
+
+Using \eqref{dif:foc1} in \eqref{trash_eq2}:
+
+$$-\mu^{\prime}(x) f_{\theta \theta}f_{x y}-\left(f_{x \theta}-w^{\prime}(x)\right)\Big[\cancel{\theta^{\prime}(x)f_{\theta \theta}}+\left(-\mu^{\prime}(x) f_{y \theta}-\cancel{\theta^{\prime}(x) f_{\theta \theta} }\right)\Big] > 0$$
+
+or
+
+\begin{equation}
+-\mu^{\prime}(x)\Big[f_{\theta \theta}f_{x y} - f_{y \theta}\left(f_{x \theta}-w^{\prime}(x)\right) \Big]> 0 \qquad \label{trash_eq3}
+\end{equation}
+
+Re-write \eqref{foc1} as $$
+ w^{\prime}(x) = \frac{f_{x}}{\theta(x)}
+$$ and use it in \eqref{trash_eq3}:
+
+\begin{equation}
+\mu^{\prime}(x)\left[f_{\theta \theta}f_{x y} - f_{y \theta}\left(f_{x \theta}-\frac{f_{x}}{\theta(x)}\right)\right] < 0 \label{trash_eq4}
+\end{equation}{}
+
+%%$F$ is strictly concave in $\theta$ then so is $f$, this means that $f_{\theta\theta}<0$, then divide $(7)$ by $-f_{\theta\theta}>0$%%
+
+Recall that we wanted a condition for $\mu'(x)>0$ then a necessary condition for the matching to be \textbf{PAM} is: 
+
+\begin{equation}
+f_{\theta \theta}f_{x y} - f_{y \theta}\left(f_{x \theta}-\frac{f_{x}}{\theta(x)}\right) < 0\label{pam_cond_simple}
+\end{equation}
+
+Equation \eqref{pam_cond_simple} can be summarized in terms of the original production function $F$ using the fact that $F$ is homogeneous of degree $1$ in the quantity variables $(l,r)$ and the following two results on homogeneous functions:
+\begin{enumerate}
+    \item \textbf{Euler's Theorem on Homogeneous Functions}: If $g:\mathbb{R}^{n}\to \mathbb{R}$ is continuously differentiable in its domain and homogeneous of degree $n$ then: $$ng(x)= \sum_{i=1}^{n}x_i g_i(x)$$
+    \item If $g:\mathbb{R}^{n}\to \mathbb{R}$ is continuously differentiable in its domain and homogeneous of degree $n$ then $g_i(x)$ is homogeneous of degree $(n-1)$.
+\end{enumerate}
+
+
+Since $F$ is homogeneous of degree $1$ in $(l,r)$ then $F_l$ is homogeneous of degree $0$, then apply Euler's theorem to $F_l$ to get:
+
+\begin{equation}
+0F_l = l \frac{\partial F_l}{\partial l} + r\frac{\partial F_r}{\partial l} \quad \implies \quad  lF_{ll} + rF_{lr} = 0 \qiq \theta F_{ll} = -F_{lr} \label{derivative_ll_lr}
+\end{equation}
+
+
+Using Euler's theorem on $F$ we have $F = l F_l + r F_r $, since $F_l$ and $F_r$ are homogeneous of degree $0$ we can write $F_l = F_l/r$ and $F_r = rF_r$ therefore:
+\begin{equation}
+F = \theta F_l + F_r \quad \implies \quad F_x = \theta F_{xl} + F_{xr} \label{derivative_x_}
+\end{equation}
+
+
+Re-writing \eqref{pam_cond_simple} and plugging in to \eqref{derivative_x_}:
+
+\begin{align*}
+F_{l l}F_{x y} - F_{y l}\left(\cancel{F_{x l}}-\frac{\cancel{\theta F_{xl}} + F_{xr}}{\theta}\right) & < 0 \\
+F_{ll}F_{xy}+F_{yl} \frac{F_{xr}}{\theta}& < 0 \\
+-\frac{F_{lr}}{\theta}F_{xy}+F_{yl} \frac{F_{xr}}{\theta}& < 0 \\
+F_{lr}F_{xy}-F_{yl}F_{xr}& \underbrace{>}_{\text{Since }\theta>0} 0
+\end{align*}
+
+We have obtained a necessary condition on the production function for \textbf{PAM}, turns out that this condition is also sufficient as the following proposition establish:
+
+\begin{prop}\label{prop2}
+ A necessary and sufficient condition to have equilibria with positive assortative matching is that the following inequality holds:
+
+\begin{equation}\label{pam_cond}
+    F_{x y} > \frac{F_{y l} F_{x r}}{F_{l r}}    
+\end{equation}
+
+for all $(x, y, l, r) \in \mathbb{R}_{++}^{4} .$ 
+
+The opposite inequality provides a necessary and sufficient condition for negative assortative matching.
+\end{prop}
+
+Before proving the sufficiency part, note that since the firm's problem is quasi-linear then Pareto optimality requires output maximization. This is the key idea behind the proof: if \eqref{pam_cond} holds then the output of any not positive assortative allocation can be strictly improved implying that it must not be an equilibrium.
+
+ Consider some matching $(x,y,\theta)$ such that a total measure $r$ of resources is deployed in this match, the output generated is $$F(x,y,\theta r, r) = r f(x,y,\theta)$$ now suppose that we withdraw some optimal measure of workers $\hat{r}\hat{\theta}$ then the output of this firm changes to: $$F(x,y,\theta r - \hat{r}\hat{\theta}, r) = r f\left(x,y,\theta - \frac{ \hat{r}\hat{\theta} }{r}\right)$$
+If we optimally pair those workers with some firm $\hat{y}$ we get and additional output of:$$F(x,\hat{y}, \hat{r}\hat{\theta}, \hat{r}) =  \hat{r} f(x,\hat{y}, \hat{\theta})$$
+
+Consider the marginal change generated by an infinitesimal change $\hat{r}$:
+
+$$\frac{\partial}{\partial \hat{r}}\left(r f\left(x,y,\theta - \frac{ \hat{r}\hat{\theta} }{r}\right) + \hat{r} f(x,\hat{y}, \hat{\theta})\right)\Big\vert_{\hat{r} = 0 } = f(x,\hat{y}, \hat{\theta}) - \hat{\theta}f_\theta(x,y,\theta)$$ 
+
+Since we are assuming that the shift $\hat{r}$ is optimal then the first order condition \eqref{foc1} pins down $\hat{\theta}$:$$f_\theta(x,y,\theta)=f_\theta(x,\hat{y},\hat{\theta}) = w(x)$$
+
+We can define the marginal change of shifting the optimal measure of workers from firm $y$ to firm $\hat{y}$:
+
+\begin{equation}\label{beta_defin}
+\beta(\hat{y};x,y,\theta) = f(x,\hat{y}, \hat{\theta}) - \hat{\theta}f_\theta(x,y,\theta) \quad \text{where} \quad f_\theta(x,y,\theta)=f_\theta(x,\hat{y},\hat{\theta})
+\end{equation}
+
+\begin{proof}
+(\textbf{Proposition} \ref{proposition1}) Suppose that \eqref{pam_cond} or equivalently \eqref{pam_cond_simple} hold and the equilibrium matching is not \textbf{PAM}, i.e  $x_{1}$ is matched to $y_{1}$ at intensity $\theta_{1}$ and $x_{2}$ to $v_{2}$ at intensity $\theta_{2}$, but $x_{1}>x_{2}$ while $y_{1}<y_{2}$, for this match to be efficient the following two inequalities mus \textbf{simultaneously} hold:
+
+\begin{equation}\label{beta_y1}
+    \beta(y_1; x_2, y_2, \theta_2) \leq \beta(y_1; x_1, y_1, \theta_1) 
+\end{equation}
+\begin{equation}\label{beta_y2}
+    \beta(y_2; x_1, y_1, \theta_1) \leq \beta(y_2; x_2, y_2, \theta_2) 
+\end{equation}
+
+Define $$\varphi(y) = \beta(y; x_2, y_2, \theta_2) - \beta(y; x_1, y_1, \theta_1) $$
+
+Assume that \eqref{beta_y1} and \eqref{beta_y2} both hold, if not then we have a contradiction and we are finished with the proof, then $\varphi(y_1)\leq0\leq \varphi(y_2)$, since $\varphi(y)$ is a continuous function of $y$ then there is a value $\tilde{y} \in [y_1, y_2]$ such that 
+
+\begin{equation}\label{definition_varphi}
+    \varphi(\tilde{y}) = 0 \qiq  \beta(\tilde{y}; x_2, y_2, \theta_2) = \beta(\tilde{y}; x_1, y_1, \theta_1) 
+\end{equation}
+
+We are going to show that 
+\begin{equation}\label{contradiction}
+\beta(\hat{y},x_2,y_2,\theta_2)<\beta(\hat{y}, x_1, y_1, \theta_1)\qquad \forall \hat{y}>y_1 
+\end{equation}
+In particular for $\hat{y} = y_2$ there is a contradiction with \eqref{beta_y2}. 
+Note that for any $(x,y,\theta)$ there is $\xi(x)$ such that
+\begin{align*}
+    \beta(\tilde{y};x,y,\theta) & = f(x,\tilde{y}, \xi(x)) - \xi(x)f_\theta(x,y,\theta)\\&=f(x,\tilde{y}, \xi(x)) - \xi(x)f_\theta(x,\tilde{y}, \xi(x))
+\end{align*}
+
+Therefore we can define the function $\xi(x)$ such that for all $x$ the following hods:
+
+\begin{equation}\label{def_xi_1}
+f(x,\tilde{y},\xi(x)) - \xi(x)f_\theta(x,\tilde{y}, \xi(x)) = \beta(\tilde{y},x_2,y_2,\theta_2)
+\end{equation}
+
+and by \eqref{definition_varphi}:
+
+\begin{equation}\label{def_xi_2}
+f(x,\tilde{y},\xi(x)) - \xi(x)f_\theta(x,\tilde{y}, \xi(x)) = \beta(\tilde{y},x_1,y_1,\theta_1)\end{equation}
+
+It is clear that $\xi(x_1) = \theta_1$ and $\xi(x_2) = \theta_2$. We can implicitly differentiate either expression \eqref{def_xi_1} or \eqref{def_xi_2} to get:
+
+\begin{equation}
+    \xi^{\prime}(x)=\frac{f_{x}}{\xi(x) f_{\theta \theta}}-\frac{f_{x \theta}}{f_{\theta \theta}}
+\end{equation}
+
+Consider 
+\begin{align*}
+\frac{\partial}{\partial x}\left(f_y(x, \tilde{y}, \xi(x))\right) = f_{xy} +f_{y\theta}\xi'(x) &= f_{xy} + f_{y\theta}\left(\frac{f_{x}}{\xi(x) f_{\theta \theta}}-\frac{f_{x \theta}}{f_{\theta \theta}}\right) \\ &=\overbrace{\frac{1}{f_{\theta \theta}}}^{<0}\underbrace{\left( f_{\theta \theta} f_{xy} +f_{y\theta}\frac{f_{x}}{\xi(x)}-f_{y \theta}f_{x \theta}\right)}_{<0 \text{by \eqref{pam_cond_simple}}}>0
+\end{align*}
+
+This means that $f_{y}(x,\tilde{y}, \xi(x))$ is decreasing in $x$ and since $x_1>x_2$ and $\xi(x_1) = \theta_1$ and $\xi(x_2) = \theta_2$ we have $$f_{y}(x_2,\tilde{y}, \theta_2) <f_{y}(x_1,\tilde{y}, \theta_1)$$
+
+Since $$\beta_{1}(\hat{y} ; x, y, \theta)=f_{y}(x, \hat{y}, \hat{\theta})$$ 
+ then $$
+\beta_{1}\left(\tilde{y} ; x_{2}, y_{2}, \theta_{2}\right)<\beta_{1}\left(\tilde{y} ; x_{1}, y_{1}, \theta_{1}\right)
+$$
+
+This means that $\beta(\tilde{y}; x_1,y_1, \theta_1)$ grows strictly faster than $\beta(\tilde{y}; x_2,y_2, \theta_2)$ which means \eqref{contradiction} which in turns we can plug $\tilde{y} = y_2$ to contradict \eqref{beta_y2}, thus completing the proof. 
+
+\end{proof}
+\subsubsection{Equilibrium Assignment}
+
+This model deals with both the intensive and the extensive margin, therefore assortativity is not enough to characterize who matches with whom in equilibrium. Firms could hire more or less workers. 
+
+% From \textbf{Proposition \ref{prop1} we know that for every $y$ exist a unique $x$ such that $y$ hires $x$ this is given by the (invertible) matching relation $y = \mu(x)$, since $\mu$ is singled valued we have:
+
+\begin{align*}
+    y = \mu(x) &\qquad \implies \qquad r^y(x) = \mathbbm{1}_{\{y=\mu(x)\}}\\
+    % &\qiq l^y(x) = \theta(x)\mathbbm{1}_{\{y=\mu(x)\}}
+\end{align*}
+
+We can drop the superscript $y$ form $\theta$ since in equilibrium the choice for the optimal $\theta$ is unique.
+
+By market clearing of the labor market it must be true in equilibrium that:
+
+\begin{equation}\label{mkt_clearing_eq}
+\int_{y}\left[\mathcal{L}^{y}(x)-\mathcal{L}^{y}\left(x^{\prime}\right)\right] d H^{f} = H^{w}(x)-H^{w}\left(x^{\prime}\right)
+\end{equation}
+
+We can re-write the LHS of the above expression in terms if $\theta$ as:
+
+% \begin{align*}
+%     \int_{y}\left[\mathcal{L}^{y}(x)-\mathcal{L}^{y}\left(x^{\prime}\right)\right] d H^{f} &=  \int_{y}\left[ \int_{\underline{x}}^{\overline{x}}{\theta(s)d\mathcal{R}^y(x)} - \int_{\underline{x}}^{x}{\theta(s)d\mathcal{R}^y(s)} \right] d H^{f} \\
+%     &=  \int_{y}\left[ \int_{x}^{\overline{x}}{\theta(s)d\mathcal{R}^y(s)} \right] d H^{f} = \int_{y}\left[ \int_{x}^{\overline{x}}{\theta(s)\mathbbm{1}_{\{y=\mu(s)\}}dH^w} \right]
+% \end{align*}
+
+% Note that if $y=\mu(x')$ with $x'\not\in[x,\overline{x}]$ then $\mathbbm{1}_{\{y=\mu(s)\}} = 0$ for all $s\in[x,\overline{x}]$ therefore we can integrate over $[\mu(x), \overline{y}]$, this causes no problem since we are assuming PAM this $\mu$ is increasing with $\mu(\overline{x}) = \overline{y}$, then the above integral is:
+
+% \begin{align*}
+%     \int_{\mu(x)}^{\overline{y}}{ \left[ \int_{x}^{\overline{x}}{\theta(x)} \mathbbm{1}_{\{s=\mu^{-1}(y)\}}dH^w \right] dH^f } = \int_{\mu(x)}^{\overline{y}}{ \theta(\mu^{-1}(y)) dH^f } 
+% \end{align*}
+
+We can rewrite \eqref{mkt_clearing_eq} as:
+
+\begin{equation}\label{mkt_clearing_eq_2}
+    \int_{\mu(x)}^{\overline{y}}{ \theta(\mu^{-1}(y)) dH^f }  =  H^{w}(x)-H^{w}\left(x^{\prime}\right)
+\end{equation}
+
+Differentiating with respect to $x$ both sides of the above expression to get:
+
+$$h^f(\mu(x))\theta(\mu^{-1}(\mu(x)))\mu'(x) = h^w(x)$$
+
+We can isolate $\mu'(x)$:
+
+\begin{equation}\label{eq_mu}
+\mu'(x) = \frac{\mathcal{H}(x)}{\theta(x)}\qquad \text{with} \qquad \mathcal{H}(x)= \frac{h^{w}(x)}{h^{f}(\mu(x))}    
+\end{equation}
+
+
+From \eqref{foc2} we have:
+
+\begin{equation}\label{eq_w}
+    w^{\prime}(x) =\frac{f_{x}}{\theta(x) }    
+\end{equation}
+ 
+From the differentiated FOC in \eqref{dif:foc2} we have:
+$$f_{x x}-\theta(x) w^{\prime \prime}(x) =-\mu^{\prime}(x) f_{x y}-\theta^{\prime}(x)\left[f_{x \theta}-w^{\prime}(x)\right]$$
+ 
+ Manipulating this expression we get:
+ 
+ \begin{align*}
+\theta(x) w^{\prime \prime}(x)+\theta^{\prime}(x) w'(x)&=\mu^{\prime}(x) t+f_{x y}+\theta'(x) f_{x \theta}+f_{x x}\\ &\implies \frac{\partial}{\partial x}\left(\theta(x)w'(x) \right)
+=\mu^{\prime}(x) t+f_{x y}+\theta'(x) f_{x \theta}+f_{x x}
+\end{align*}
+
+From \eqref{eq_w}:
+$$w^{\prime}(x)\theta(x) = f_{x}\qiq   \frac{\partial}{\partial x}\left(\theta(x)w'(x) \right)
+= f_{xx}  $$
+
+Combining both equations:
+
+$$\cancel{f_{xx}} = \mu^{\prime}(x) t+f_{x y}+\theta'(x) f_{x \theta}+\cancel{f_{x x}}$$
+
+Plugging the expression for $\mu'(x)$ from \eqref{eq_mu} and isolating $\theta'(x)$ we get:
+
+\begin{equation}\label{eq_th}
+    \theta'(x) = \frac{\mathcal{H}(x)f_{x y}}{\theta(x) f_{x \theta}}
+\end{equation}
+
+Then the system of differential equations formed by \eqref{eq_mu}, \eqref{eq_w} and \eqref{eq_th}:
+
+\begin{equation}
+\begin{dcases}
+        \mu'(x) = \frac{\mathcal{H}(x)}{\theta(x)} \\
+        w^{\prime}(x) =\frac{f_{x}}{\theta(x)}   \\
+        \theta'(x) = \frac{\mathcal{H}(x)f_{x y}}{\theta(x) f_{x \theta}}
+\end{dcases}
+\end{equation}
+fully characterizes the equilibrium.
+
+
+\section{Simulation}
+
+
+\bibliography{references.bib}
+
+\end{document}
