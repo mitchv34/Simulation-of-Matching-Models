@@ -2,9 +2,9 @@ include("simulation_functions.jl")
 
 model = initialize_model()
 
-ω_A, ω_B, σ_A = model.params
+ω_A, ω_B, σ_A = model.params # unpack parameters into variables
 
-param_values = Dict(ω_A => 0.25, ω_B => 0.5, σ_A => 0.5)
+param_values = Dict(ω_A => 0.25, ω_B => 0.5, σ_A => 0.5) # pack parameter values into a dictionary
 
 
 model.solver.nk
@@ -12,8 +12,6 @@ model.solver.nk
 Solution!(model::Model, param_values)
 
 sys_vars = model.solver.vars
-
-model.solver.initial_condition[sys_vars[:θ]] = 34.0
 
 model.solver.initial_condition
 

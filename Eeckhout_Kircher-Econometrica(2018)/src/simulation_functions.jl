@@ -43,7 +43,8 @@ end
     
     # production function
     F::Num # The production function
-
+    f::Num # The production function exploiting homogeneity
+    Π::Num # The symbolic expression for the profits of the firm
     # Distribution of types
     type_dist :: NamedTuple # Distribution of types
 
@@ -177,7 +178,7 @@ function initialize_model()
     solver = Solver(sol_vars, sys, x_bounds, initial_condition, nk, solution)
     
     # Define the model
-    model = Model(vars, params, F, type_dist, solver)
+    model = Model(vars, params, F, f, Π, type_dist, solver)
     return model
 end
 
@@ -222,23 +223,23 @@ function shooting_method(solver, param_values; tol=1e-5, max_iter = 100, saveat=
     sol = solve_IVP(sys, u0, xspan, param_values)
 
 	n = 0
-	println("θ(1) = $guess_firm_size")
+	println("θ(1) = $(u0[sys_vars[:θ]])")
 	while (abs(err) > tol) & (n < max_iter)
 		n += 1
 		sol = solve_IVP(sys, u0, xspan, param_values)
 		err = sol(100)[2] - 100
 		if err < 0
 			print("err < 0 ")
-			firm_size_upper = guess_firm_size
-			guess_firm_size = (firm_size_lower + firm_size_upper)/2
-			println("next θ(1) = $guess_firm_size")
+			firm_size_upper = u0[sys_vars[:θ]]
+			u0[sys_vars[:θ]] = (firm_size_lower + firm_size_upper)/2
+			println("next θ(1) = $(u0[sys_vars[:θ]])")
 		else
 			print("err > 0 ")
-			firm_size_lower = guess_firm_size
-			guess_firm_size = (firm_size_lower + firm_size_upper)/2
-			println("next θ(1) = $guess_firm_size")
+			firm_size_lower = u0[sys_vars[:θ]]
+			u0[sys_vars[:θ]] = (firm_size_lower + firm_size_upper)/2
+			println("next θ(1) = $(u0[sys_vars[:θ]])")
 		end
-		u0[sys_vars[:θ]] = guess_firm_size
+		# u0[sys_vars[:θ]] = guess_firm_size
 		# println("Iteration: $n, err=$err, θ(1) = $guess_firm_size, μ(100) =$(sol(100)[2])")
 	end
 	
@@ -254,7 +255,13 @@ function Solution!(model::Model, param_values)
     
     # Unpack necesary values 
     θ = model.solver.vars[:θ]
+    μ = model.solver.vars[:μ]
+    w = model.solver.vars[:w]
+    x = model.vars[:x]
     x_bounds = model.solver.xspan
+    Π = model.Π
+
+    # Create save range for the shooting method
     save_range = range(x_bounds[1], stop=x_bounds[2], length = model.solver.nk)
 
     sol = shooting_method(model.solver, param_values; saveat=save_range)
@@ -269,7 +276,7 @@ function Solution!(model::Model, param_values)
     Dθ = Differential(θ)
     eval_wages = eval( 
                         build_function(
-                                substitute(expand_derivatives(Dθ(f)), param_values),
+                                substitute(expand_derivatives(Dθ(model.f)), param_values),
                                 [x,θ,μ]
                                 ) 
                         )
