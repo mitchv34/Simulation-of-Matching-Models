@@ -79,19 +79,21 @@ function return_relevant_derivatives(F::Num, x::Num, y::Num, l::Num, r::Num)
     return Fx, Fxy, Flr, Fxr, Fyl
 end 
 
-function convert_to_solution!(solution::Solution, sol::ODESolution, eval_profits, eval_wages)
+function convert_to_solution!(solver::LinSolveMINRES, sol::ODESolution, eval_profits, eval_wages)
+    
+    sys_vars = solver.vars
     
     # Create a matrix of solution
-	solution.x = sol.t
-    solution.θ = sol[θ]
-    solution.μ = sol[μ]
+	solver.solution.x = sol.t
+    solver.solution.θ = sol[sys_vars[:θ]]
+    solver.solution.μ = sol[sys_vars[:μ]]
 
 	# Calculate wages and add them to the solution :
 	wages = map(i -> eval_wages(matrix_sol[i, :]), 1:nk)
-	solution.w = wages
+	solver.solution.w = wages
 	# Calculate profits and put them in the matrix:
 	profits = map(i -> eval_profits(matrix_sol[i, :]), 1:nk)
-	solution.Π = profits
+	solver.solution.Π = profits
 
 end
 
@@ -261,11 +263,14 @@ function Solution!(model::Model, param_values)
     x_bounds = model.solver.xspan
     Π = model.Π
 
+    println("Here 1")
     # Create save range for the shooting method
     save_range = range(x_bounds[1], stop=x_bounds[2], length = model.solver.nk)
 
+    println("Here 2")
     sol = shooting_method(model.solver, param_values; saveat=save_range)
 
+    println("Here 3")
     # Construct functions to evaluate wages and profits
     eval_profits = eval( 
                         build_function(
@@ -274,6 +279,7 @@ function Solution!(model::Model, param_values)
                                 )
                         )
     Dθ = Differential(θ)
+    println("Here 4")
     eval_wages = eval( 
                         build_function(
                                 substitute(expand_derivatives(Dθ(model.f)), param_values),
@@ -281,7 +287,8 @@ function Solution!(model::Model, param_values)
                                 ) 
                         )
 
-
-    convert_to_solution!(model.solver.solution,  sol, eval_profits, eval_wages)
+                        println("Here 5")
+    convert_to_solution!(solver,  sol, eval_profits, eval_wages)
+    println("Here 6")
 end
 
