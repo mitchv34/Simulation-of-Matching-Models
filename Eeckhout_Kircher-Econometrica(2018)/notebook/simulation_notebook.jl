@@ -54,7 +54,7 @@ md"""
 
 # ╔═╡ 59ee7ad5-722f-43eb-af12-247a86ead7a7
 md"""
-First we write the model as a pure symblyc expression if the variables `x, y, r, l` and the parameters `ω_A, ω_B, σ_A`.
+First, we write the model as a pure symbolic expression if the variables `x, y, r, l` and the parameters `ω_A, ω_B, σ_A`.
 """
 
 # ╔═╡ 70a719fc-7a45-416b-8869-5f79fe7f2be1
@@ -183,7 +183,7 @@ Ploting $(@bind which_plot Select([
 # ╔═╡ 6e2c2b71-ec0a-43aa-8711-39a4f8280861
 begin
 	# Initial conditions of the system
-	u0 = [μ => 1.0, θ => guess_firm_size1, w => 0.149810]
+	u0 = Dict(μ => 1.0, θ => guess_firm_size1, w => 0.149810)
 	# Defining the ODEProblem object
 	prob = ODEProblem(sys, u0, xspan, p, jac=true) 
 	# Solving the system
@@ -213,6 +213,12 @@ begin
 	end
 	
 end
+
+# ╔═╡ a176a196-6016-42d5-bd3e-a537c3e44d27
+typeof(u0)
+
+# ╔═╡ 9755189f-3899-4227-8f72-c843524d8d3d
+typeof(map(i -> eval_wages(matrix_sol[i, :]), 1:nk))
 
 # ╔═╡ 29ed847f-a9e8-4c5d-bead-f7633449a3ff
 md"Initial firm size guess of $guess_firm_size1 results in μ(100) = $(sol(100)[2])"
@@ -352,6 +358,12 @@ plot([xs[i] for i in 1:9],
 	[θs[i] for i in 1:9],
 	palette = :RdYlGn_11,
 	label="", ylims=(0,800))
+
+# ╔═╡ e5dfe3ce-60b5-4404-b32e-5e817b261435
+a = [x => 1, y=>2]
+
+# ╔═╡ 2e96ee8c-a07c-4b37-b3be-853e8c5f5ab2
+range(1.0, 2.0, length = 6000)
 
 # ╔═╡ 00000000-0000-0000-0000-000000000001
 PLUTO_PROJECT_TOML_CONTENTS = """
@@ -1916,7 +1928,9 @@ version = "0.9.1+5"
 # ╠═9c31c6fd-0811-45f9-a6a3-0eeac613d8de
 # ╠═2a3f8009-581c-4786-b0d0-4749696863d1
 # ╟─d57e719e-1879-495b-b5c7-13a975e8e8b7
-# ╟─6e2c2b71-ec0a-43aa-8711-39a4f8280861
+# ╠═a176a196-6016-42d5-bd3e-a537c3e44d27
+# ╠═6e2c2b71-ec0a-43aa-8711-39a4f8280861
+# ╠═9755189f-3899-4227-8f72-c843524d8d3d
 # ╟─29ed847f-a9e8-4c5d-bead-f7633449a3ff
 # ╟─30d0545a-6d1c-482b-8451-58830599bada
 # ╟─1210ce21-aa56-4a48-9ecc-f3684cf0eb47
@@ -1930,5 +1944,7 @@ version = "0.9.1+5"
 # ╠═7335f67f-e130-4bc5-a823-3ab4ae574ab1
 # ╠═1be892f6-fef2-4735-a4c1-3c5eba0a7cc5
 # ╠═7d0afd3b-6816-4e47-9ceb-179f6a718154
+# ╠═e5dfe3ce-60b5-4404-b32e-5e817b261435
+# ╠═2e96ee8c-a07c-4b37-b3be-853e8c5f5ab2
 # ╟─00000000-0000-0000-0000-000000000001
 # ╟─00000000-0000-0000-0000-000000000002
