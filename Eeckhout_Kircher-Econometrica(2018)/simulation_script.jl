@@ -2,6 +2,62 @@ using  ModelingToolkit, OrdinaryDiffEq, Distributions, Parameters
 using Plots, ColorSchemes
 
 #######################################################################################
+############################# Model Structures ########################################
+#######################################################################################
+
+# Structure containing the model solution
+mutable struct Solution
+    x::Vector{Float64} # Worker types
+    μ::Vector{Float64} # Equilibrium Matching μ(x)
+    θ::Vector{Float64} # Equilibrium Firm size θ(x)
+    w::Vector{Float64} # Equilibrium wages w(x)
+    Π::Vector{Float64} # Equilibrium profits Π(x, μ(x))    
+end
+
+
+mutable struct Solver
+    
+    # Structure containing the model solver
+    
+    ode_system::ODESystem # System of Ordinary Differential Equations
+    
+    # Solver parameters
+    xspan::Vector{Float64} # Interval of integration
+    inital_condition :: Vector{Pair{Num, Int64}} # Initial condition
+    nk :: Int # Number of points in the grid
+    
+    # Solution
+    solution::Solution # Solution of the model
+    
+    # Auxiliary functions
+    eval_profits::(Vector{Float64} -> Float64) # Function to evaluate profits
+    eval_wages::(Vector{Float64} -> Float64) # Function to evaluate wages
+end
+
+# The following Structure is used to store the model
+@with_kw struct Model
+    
+    # Variables and parameters
+    vars::NamedTuple # Variables
+    params::NamedTuple # Parameters
+    
+    # production function
+    F::Num # The production function
+
+    # Distribution of types
+    type_dist :: NamedTuple # Distribution of types
+
+    # Model solver
+    solver::Solver # Model solver
+
+end
+
+
+#######################################################################################
+#######################################################################################
+#######################################################################################
+
+#######################################################################################
 ############################## Auxiliary Functions ####################################
 #######################################################################################
 
@@ -43,63 +99,7 @@ end
 #######################################################################################
 
 #######################################################################################
-############################# Model Structures ########################################
-#######################################################################################
-
-# The following Structure is used to store the model
-@with_kw struct Model
-    
-    # Variables and parameters
-    vars::NamedTuple # Variables
-    params::NamedTuple # Parameters
-    
-    # production function
-    F::Num # The production function
-
-    # Distribution of types
-    type_dist :: NamedTuple # Distribution of types
-
-    # Model solver
-    solver::Solver # Model solver
-
-end
-
-# Structure containing the model solution
-mutable struct Solution
-    x::Vector{Float64} # Worker types
-    μ::Vector{Float64} # Equilibrium Matching μ(x)
-    θ::Vector{Float64} # Equilibrium Firm size θ(x)
-    w::Vector{Float64} # Equilibrium wages w(x)
-    Π::Vector{Float64} # Equilibrium profits Π(x, μ(x))    
-end
-
-
-mutable struct Solver
-
-    # Structure containing the model solver
-
-    ode_system::ODESystem # System of Ordinary Differential Equations
-
-    # Solver parameters
-    xspan::Vector{Float64} # Interval of integration
-    inital_condition :: Vector{Pair{Num, Int64}} # Initial condition
-    nk :: Int # Number of points in the grid
-
-    # Solution
-    solution::Solution # Solution of the model
-
-    # Auxiliary functions
-    eval_profits::(Vector{Float64} -> Float64) # Function to evaluate profits
-    eval_wages::(Vector{Float64} -> Float64) # Function to evaluate wages
-end
-
-
-#######################################################################################
-#######################################################################################
-#######################################################################################
-
-#######################################################################################
-####################################### Model Initialization ##########################
+############################# Model Initialization ####################################
 #######################################################################################
 
 # This function initializes the model
