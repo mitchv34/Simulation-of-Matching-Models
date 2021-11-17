@@ -42,8 +42,9 @@ end
 
 solver_vars = model.solver.vars
 
-
-for field in fieldnames(Solutions_for_Plots)
+labels = Dict(:ω_A => "\\omega_A", :ω_B => "\\omega_B", :σ_A => "\\sigma_A")
+for j in 1:3
+   field = fieldnames(Solutions_for_Plots)[j]
 
    s = getfield( solution_plot, field)
 
@@ -51,28 +52,36 @@ for field in fieldnames(Solutions_for_Plots)
    p_θ_1 = plot()
    p_θ_2 = plot()
    
+   lab = labels[field]
    for i∈1:3
 
       x = param_var[i]
       p_μ = plot!(p_μ, s[x].t, s[x][solver_vars[:μ]], title=L"\mu(x)", xlabel = L"x", label="")
-      p_θ_1 = plot!(p_θ_1, s[x].t, s[x][solver_vars[:θ]], title=L"\theta(x)", xlabel = L"x", label=L"\omega_A = %$x")
+      p_θ_1 = plot!(p_θ_1, s[x].t, s[x][solver_vars[:θ]], title=L"\theta(x)", xlabel = L"x", label=L"%$(lab) = %$x")
       ylims!(0,400)
       p_θ_2 = plot!(p_θ_2, s[x][solver_vars[:μ]], s[x][solver_vars[:θ]], title=L"\theta(\mu(x))", xlabel = L"\mu(x)", label="")
       ylims!(0,400)
-      p_μ.series_list[end][:linecolor] = "red"
-      p_θ_1.series_list[end][:linecolor] = "red"
-      p_θ_2.series_list[end][:linecolor] = "red"
+      p_μ.series_list[end][:linecolor] = "#d1244f"
+      p_θ_1.series_list[end][:linecolor] = "#d1244f"
+      p_θ_2.series_list[end][:linecolor] = "#d1244f"
+      p_μ.series_list[end][:linewidth] = 3
+      p_θ_1.series_list[end][:linewidth] = 3
+      p_θ_2.series_list[end][:linewidth] = 3
+      # p_θ_1.series_list[end][:linecolor] = "#d1244f"
+      # p_θ_2.series_list[end][:linecolor] = "#d1244f"
       # p_w = plot(matrix_sol[:, 1], matrix_sol[:,3], title="w(x)", xlabel = "x", label="")
       # p_Π = plot(matrix_sol[:, 1], matrix_sol[:,3], title="Π(x)", xlabel = "x", label="")
       plot(p_μ, p_θ_1, p_θ_2, layout=(1,3), size=(1200,450))  
-      savefig("Eeckhout_Kircher-Econometrica(2018)/document/figures/plot_$(field)_$(i).png")
+      savefig("Eeckhout_Kircher-Econometrica(2018)/document/figures/plot_$(field)_$(i).pdf")
       p_μ.series_list[end][:linealpha] = 0.4
       p_θ_1.series_list[end][:linealpha] = 0.4
       p_θ_2.series_list[end][:linealpha] = 0.4
       p_μ.series_list[end][:linecolor] = "grey"
       p_θ_1.series_list[end][:linecolor] = "grey"
       p_θ_2.series_list[end][:linecolor] = "grey"
-
+      p_μ.series_list[end][:linewidth] = 1
+      p_θ_1.series_list[end][:linewidth] = 1
+      p_θ_2.series_list[end][:linewidth] = 1
    end
 
    colors = ["#66C2A5", "#FC8D62", "#8DA0CB"]
@@ -84,11 +93,14 @@ for field in fieldnames(Solutions_for_Plots)
       p_μ.series_list[i][:linecolor] = colors[i]
       p_θ_1.series_list[i][:linecolor] = colors[i]
       p_θ_2.series_list[i][:linecolor] = colors[i]
+      p_μ.series_list[end][:linewidth] = 2
+      p_θ_1.series_list[end][:linewidth] = 2
+      p_θ_2.series_list[end][:linewidth] = 2
    end
 
    
    plot(p_μ, p_θ_1, p_θ_2, layout=(1,3), size=(1200,420))  
    
-   savefig("Eeckhout_Kircher-Econometrica(2018)/document/figures/plot_omega_A.png")
+   savefig("Eeckhout_Kircher-Econometrica(2018)/document/figures/plot_$(field).pdf")
 
-end 
+end  

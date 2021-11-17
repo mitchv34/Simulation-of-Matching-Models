@@ -217,7 +217,7 @@ function shooting_method(solver, param_values; tol=1e-5, max_iter = 100, saveat=
 
 	# Define an initial guess for firm size upper and lower bound
 	firm_size_lower = 0
-	firm_size_upper = 10000
+	firm_size_upper = 1000000
 	u0[sys_vars[:θ]] = (firm_size_lower + firm_size_upper)/2
 
 	err = 100
@@ -233,12 +233,12 @@ function shooting_method(solver, param_values; tol=1e-5, max_iter = 100, saveat=
 		sol = solve_IVP(sys, u0, xspan, param_values)
 		err = sol(100)[2] - 100
 		if err < 0
-			print("err < 0 ")
+			print("err = $err < 0 ")
 			firm_size_upper = u0[sys_vars[:θ]]
 			u0[sys_vars[:θ]] = (firm_size_lower + firm_size_upper)/2
 			println("next θ(1) = $(u0[sys_vars[:θ]])")
 		else
-			print("err > 0 ")
+			print("err = $err > 0 ")
 			firm_size_lower = u0[sys_vars[:θ]]
 			u0[sys_vars[:θ]] = (firm_size_lower + firm_size_upper)/2
 			println("next θ(1) = $(u0[sys_vars[:θ]])")

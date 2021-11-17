@@ -1,15 +1,15 @@
 # Fdb version 3
-["bibtex notes"] 1637093574 "notes.aux" "notes.bbl" "notes" 1637093576
+["bibtex notes"] 1637189964 "notes.aux" "notes.bbl" "notes" 1637190174
   "/usr/share/texmf-dist/bibtex/bst/apacite/apacite.bst" 1617689697 141073 9d7b79dbf9d91133318126032cff8c27 ""
-  "notes.aux" 1637093575 5252 a26687daf5ab649818759d6957b8d9f6 "pdflatex"
+  "notes.aux" 1637190174 6196 d468d8069a16bba4ee71ff7663ffaba0 "pdflatex"
   "references.bib" 1637035925 735 a9be3226a107fb05c08525dd18fdae20 ""
   (generated)
-  "notes.bbl"
   "notes.blg"
-["pdflatex"] 1637093574 "/home/mitchv34/Work/Multi-worker assignment mode/Eeckhout_Kircher-Econometrica(2018)/document/notes.tex" "/home/mitchv34/Work/Multi-worker assignment mode/Eeckhout_Kircher-Econometrica(2018)/document/notes.pdf" "notes" 1637093576
+  "notes.bbl"
+["pdflatex"] 1637190172 "/home/mitchv34/Work/Multi-worker assignment mode/Eeckhout_Kircher-Econometrica(2018)/document/notes.tex" "/home/mitchv34/Work/Multi-worker assignment mode/Eeckhout_Kircher-Econometrica(2018)/document/notes.pdf" "notes" 1637190174
   "/home/mitchv34/.texlive/texmf-var/fonts/pk/ljfour/public/bbm/bbm12.600pk" 1637093117 8424 a8a3c3ad8c34dd9b3560ccc3b3978ec6 ""
-  "/home/mitchv34/Work/Multi-worker assignment mode/Eeckhout_Kircher-Econometrica(2018)/document/notes.aux" 1637093575 5252 a26687daf5ab649818759d6957b8d9f6 ""
-  "/home/mitchv34/Work/Multi-worker assignment mode/Eeckhout_Kircher-Econometrica(2018)/document/notes.tex" 1637093572 28980 fbc8f9e69bf59817fcec434c0a010da8 ""
+  "/home/mitchv34/Work/Multi-worker assignment mode/Eeckhout_Kircher-Econometrica(2018)/document/notes.aux" 1637190174 6196 d468d8069a16bba4ee71ff7663ffaba0 ""
+  "/home/mitchv34/Work/Multi-worker assignment mode/Eeckhout_Kircher-Econometrica(2018)/document/notes.tex" 1637190171 29910 f9d69e815b50bb5da9c4e2706a805889 ""
   "/usr/share/texmf-dist/fonts/enc/dvips/cm-super/cm-super-ts1.enc" 1617738065 2900 1537cc8184ad1792082cd229ecc269f4 ""
   "/usr/share/texmf-dist/fonts/map/fontname/texfonts.map" 1617738065 3524 cb3e574dea2d1052e39280babc910dc8 ""
   "/usr/share/texmf-dist/fonts/tfm/jknappen/ec/tcrm1200.tfm" 1617738065 1536 74b7293ec3713bb7fdca8dd1bd1f469c ""
@@ -239,14 +239,17 @@
   "/usr/share/texmf-dist/web2c/texmf.cnf" 1617738065 39911 2da6c67557ec033436fe5418a70a8a61 ""
   "/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map" 1636988374 5045527 a0ef06d06af438d62994481e52c2af5f ""
   "/var/lib/texmf/web2c/pdftex/pdflatex.fmt" 1636988371 2812676 30af28c219a39a2adbd5eba3110d538a ""
-  "notes.aux" 1637093575 5252 a26687daf5ab649818759d6957b8d9f6 "pdflatex"
-  "notes.bbl" 1637093574 536 01733475b2550fc5b8a8092ced891307 "bibtex notes"
-  "notes.out" 1637093575 1964 5633b90b95032716b2441b3bd9866c70 "pdflatex"
-  "notes.tex" 1637093572 28980 fbc8f9e69bf59817fcec434c0a010da8 ""
+  "figures/plot_σ_A.pdf" 1637189421 306610 3d55f64db1e4fc321be85f6874a23332 ""
+  "figures/plot_ω_A.pdf" 1637189420 279773 2c49f685bc7fd44aadbe9af2785fa7c1 ""
+  "figures/plot_ω_B.pdf" 1637189422 276528 971f0f8d4e5e54fa03d035442d679539 ""
+  "notes.aux" 1637190174 6196 d468d8069a16bba4ee71ff7663ffaba0 "pdflatex"
+  "notes.bbl" 1637189964 536 01733475b2550fc5b8a8092ced891307 "bibtex notes"
+  "notes.out" 1637190174 1964 5633b90b95032716b2441b3bd9866c70 "pdflatex"
+  "notes.tex" 1637190171 29910 f9d69e815b50bb5da9c4e2706a805889 ""
   (generated)
-  "/home/mitchv34/Work/Multi-worker assignment mode/Eeckhout_Kircher-Econometrica(2018)/document/notes.pdf"
-  "notes.pdf"
-  "/home/mitchv34/Work/Multi-worker assignment mode/Eeckhout_Kircher-Econometrica(2018)/document/notes.log"
-  "notes.out"
   "notes.aux"
+  "/home/mitchv34/Work/Multi-worker assignment mode/Eeckhout_Kircher-Econometrica(2018)/document/notes.pdf"
+  "/home/mitchv34/Work/Multi-worker assignment mode/Eeckhout_Kircher-Econometrica(2018)/document/notes.log"
+  "notes.pdf"
+  "notes.out"
   "notes.log"

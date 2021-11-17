@@ -539,7 +539,41 @@ fully characterizes the equilibrium.
 
 
 \section{Simulation}
+To simulate the model we will use the following production function:
 
+\begin{equation}\label{prod_funct}
+    f(x,y,\theta) = \left(\omega_{A} x^{\left(1-\sigma_{A}\right) / \sigma_{A}}+\left(1-\omega_{A}\right) y^{\left(1-\sigma_{A}\right) / \sigma_{A}}\right)^{\sigma_{A} /\left(1-\sigma_{A}\right)} \theta^{\omega_{\theta}}
+\end{equation}
+
+Figure showing the effect of changing $\omega_A$:
+
+\begin{figure}[h]
+    \begin{center}
+        \includegraphics[width=1\textwidth]{figures/plot_ω_A.pdf}
+        \caption{Effect of $\omega_A$ on the equilibrium.}
+        \label{fig:sim_omega_A}
+    \end{center}
+\end{figure}
+
+Figure showing the effect of changing $\sigma_A$:
+
+\begin{figure}[h]
+    \begin{center}
+        \includegraphics[width=1\textwidth]{figures/plot_σ_A.pdf}
+        \caption{Effect of $\sigma_A$ on the equilibrium.}
+        \label{fig:sim_σ_A}
+    \end{center}
+\end{figure}
+
+Figure showing the effect of changing $\omega_B$:
+
+\begin{figure}[h]
+    \begin{center}
+        \includegraphics[width=1\textwidth]{figures/plot_ω_B.pdf}
+        \caption{Effect of $\omega_B$ on the equilibrium.}
+        \label{fig:sim_omega_B}
+    \end{center}
+\end{figure}
 
 \bibliography{references.bib}
 

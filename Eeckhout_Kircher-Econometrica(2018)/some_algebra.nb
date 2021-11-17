@@ -1,0 +1,145 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 12.3' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       158,          7]
+NotebookDataLength[      4348,        135]
+NotebookOptionsPosition[      3676,        116]
+NotebookOutlinePosition[      4073,        132]
+CellTagsIndexPosition[      4030,        129]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+Cell[BoxData[
+ RowBox[{"ToExpression", "[", 
+  RowBox[{
+  "\"\<\\\\left(\\\\omega_{A} x^{\\\\left(1-\\\\sigma_{A}\\\\right) / \
+\\\\sigma_{A}}+\\\\left(1-\\\\omega_{A}\\\\right) y^{\\\\left(1-\\\\sigma_{A}\
+\\\\right) / \\\\sigma_{A}}\\\\right)^{\\\\sigma_{A} \
+/\\\\left(1-\\\\sigma_{A}\\\\right)} \\\\theta^{\\\\omega_{\\\\theta}}\>\"", 
+   ",", " ", "TeXForm"}], "]"}]], "Input",
+ CellChangeTimes->{{3.8461792595512743`*^9, 3.84617928407598*^9}},
+ CellLabel->"In[1]:=",ExpressionUUID->"f69ef514-2a46-4a70-889f-5b8404af88aa"],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"f", "[", 
+   RowBox[{"x_", ",", "y_", ",", "\[Theta]_"}], "]"}], ":=", 
+  RowBox[{
+   SuperscriptBox["\[Theta]", 
+    SubscriptBox["\[Omega]", "\[Theta]"]], " ", 
+   SuperscriptBox[
+    RowBox[{"(", 
+     RowBox[{
+      RowBox[{
+       SuperscriptBox["y", 
+        FractionBox[
+         RowBox[{"1", "-", 
+          SubscriptBox["\[Sigma]", "A"]}], 
+         SubscriptBox["\[Sigma]", "A"]]], " ", 
+       RowBox[{"(", 
+        RowBox[{"1", "-", 
+         SubscriptBox["\[Omega]", "A"]}], ")"}]}], "+", 
+      RowBox[{
+       SuperscriptBox["x", 
+        FractionBox[
+         RowBox[{"1", "-", 
+          SubscriptBox["\[Sigma]", "A"]}], 
+         SubscriptBox["\[Sigma]", "A"]]], " ", 
+       SubscriptBox["\[Omega]", "A"]}]}], ")"}], 
+    FractionBox[
+     SubscriptBox["\[Sigma]", "A"], 
+     RowBox[{"1", "-", 
+      SubscriptBox["\[Sigma]", "A"]}]]]}]}]], "Input",
+ CellChangeTimes->{{3.846179295539957*^9, 3.846179309945943*^9}},
+ CellLabel->"In[2]:=",ExpressionUUID->"f15c816b-721c-4cce-8429-6221908ceedb"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{
+  SubscriptBox["\[PartialD]", "x"], 
+  RowBox[{"(", 
+   RowBox[{"f", "[", 
+    RowBox[{"x", ",", "y", ",", "\[Theta]"}], "]"}], ")"}]}]], "Input",
+ CellChangeTimes->{{3.846179314314602*^9, 3.846179324885606*^9}},
+ CellLabel->"In[3]:=",ExpressionUUID->"52cb24b7-2ae3-463f-b3e3-c8ce43dee996"],
+
+Cell[BoxData[
+ RowBox[{
+  SuperscriptBox["x", 
+   RowBox[{
+    RowBox[{"-", "1"}], "+", 
+    FractionBox[
+     RowBox[{"1", "-", 
+      SubscriptBox["\[Sigma]", "A"]}], 
+     SubscriptBox["\[Sigma]", "A"]]}]], " ", 
+  SuperscriptBox["\[Theta]", 
+   SubscriptBox["\[Omega]", "\[Theta]"]], " ", 
+  SubscriptBox["\[Omega]", "A"], " ", 
+  SuperscriptBox[
+   RowBox[{"(", 
+    RowBox[{
+     RowBox[{
+      SuperscriptBox["y", 
+       FractionBox[
+        RowBox[{"1", "-", 
+         SubscriptBox["\[Sigma]", "A"]}], 
+        SubscriptBox["\[Sigma]", "A"]]], " ", 
+      RowBox[{"(", 
+       RowBox[{"1", "-", 
+        SubscriptBox["\[Omega]", "A"]}], ")"}]}], "+", 
+     RowBox[{
+      SuperscriptBox["x", 
+       FractionBox[
+        RowBox[{"1", "-", 
+         SubscriptBox["\[Sigma]", "A"]}], 
+        SubscriptBox["\[Sigma]", "A"]]], " ", 
+      SubscriptBox["\[Omega]", "A"]}]}], ")"}], 
+   RowBox[{
+    RowBox[{"-", "1"}], "+", 
+    FractionBox[
+     SubscriptBox["\[Sigma]", "A"], 
+     RowBox[{"1", "-", 
+      SubscriptBox["\[Sigma]", "A"]}]]}]]}]], "Output",
+ CellChangeTimes->{3.84617932532653*^9},
+ CellLabel->"Out[3]=",ExpressionUUID->"4cd13f74-4b87-4726-a1cd-06f7a3aa7dcb"]
+}, Open  ]]
+},
+WindowSize->{606., 659.25},
+WindowMargins->{{Automatic, 414}, {54.75, Automatic}},
+FrontEndVersion->"12.3 for Linux x86 (64-bit) (July 9, 2021)",
+StyleDefinitions->"Default.nb",
+ExpressionUUID->"6b63d19b-0491-473e-a5e2-be79abeae03e"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[558, 20, 527, 9, 133, "Input",ExpressionUUID->"f69ef514-2a46-4a70-889f-5b8404af88aa"],
+Cell[1088, 31, 1048, 31, 54, InheritFromParent,ExpressionUUID->"f15c816b-721c-4cce-8429-6221908ceedb"],
+Cell[CellGroupData[{
+Cell[2161, 66, 314, 7, 29, "Input",ExpressionUUID->"52cb24b7-2ae3-463f-b3e3-c8ce43dee996"],
+Cell[2478, 75, 1182, 38, 81, "Output",ExpressionUUID->"4cd13f74-4b87-4726-a1cd-06f7a3aa7dcb"]
+}, Open  ]]
+}
+]
+*)
+
+(* End of internal cache information *)
+
