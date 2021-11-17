@@ -1,5 +1,5 @@
 using  ModelingToolkit, OrdinaryDiffEq, Distributions, Parameters
-using Plots, ColorSchemes
+using Plots, ColorSchemes, LaTeXStrings
 
 #######################################################################################
 ############################# Model Structures ########################################
@@ -32,6 +32,7 @@ mutable struct Solver
     # Solution
     solution::Solution # Solution of the model
 
+    sol::Any # Solution of the ODE system
 end
 
 # The following Structure is used to store the model
@@ -79,17 +80,18 @@ function return_relevant_derivatives(F::Num, x::Num, y::Num, l::Num, r::Num)
     return Fx, Fxy, Flr, Fxr, Fyl
 end 
 
-function convert_to_solution!(solver::LinSolveMINRES, sol::ODESolution, eval_profits, eval_wages)
+function convert_to_solution!(solver::Solver, sol::ODESolution, eval_profits, eval_wages)
     
     sys_vars = solver.vars
-    
+    nk = solver.nk
     # Create a matrix of solution
 	solver.solution.x = sol.t
     solver.solution.θ = sol[sys_vars[:θ]]
     solver.solution.μ = sol[sys_vars[:μ]]
-
+    matrix_sol = hcat(sol.t, sol[sys_vars[:θ]], sol[sys_vars[:μ]])
 	# Calculate wages and add them to the solution :
 	wages = map(i -> eval_wages(matrix_sol[i, :]), 1:nk)
+    matrix_sol = hcat(matrix_sol, profits)
 	solver.solution.w = wages
 	# Calculate profits and put them in the matrix:
 	profits = map(i -> eval_profits(matrix_sol[i, :]), 1:nk)
@@ -177,7 +179,7 @@ function initialize_model()
     μ₀ = y_bounds[ ( assortativity == "positive") ? 1 : 2 ]
     initial_condition = Dict(μ => μ₀, θ => 0.0) # Initial condition for θ(x) will be defined later
     # Define the solver of the model
-    solver = Solver(sol_vars, sys, x_bounds, initial_condition, nk, solution)
+    solver = Solver(sol_vars, sys, x_bounds, initial_condition, nk, solution, [])
     
     # Define the model
     model = Model(vars, params, F, f, Π, type_dist, solver)
@@ -252,6 +254,7 @@ function shooting_method(solver, param_values; tol=1e-5, max_iter = 100, saveat=
     end
 end
 
+
 # This function solves the model using the shooting method
 function Solution!(model::Model, param_values)
     
@@ -263,32 +266,19 @@ function Solution!(model::Model, param_values)
     x_bounds = model.solver.xspan
     Π = model.Π
 
-    println("Here 1")
     # Create save range for the shooting method
     save_range = range(x_bounds[1], stop=x_bounds[2], length = model.solver.nk)
 
-    println("Here 2")
     sol = shooting_method(model.solver, param_values; saveat=save_range)
 
-    println("Here 3")
-    # Construct functions to evaluate wages and profits
-    eval_profits = eval( 
-                        build_function(
-                                substitute(Π , param_values), 
-                                [x, θ, μ, w]
-                                )
-                        )
-    Dθ = Differential(θ)
-    println("Here 4")
-    eval_wages = eval( 
-                        build_function(
-                                substitute(expand_derivatives(Dθ(model.f)), param_values),
-                                [x,θ,μ]
-                                ) 
-                        )
+    model.solver.sol = sol
 
-                        println("Here 5")
-    convert_to_solution!(solver,  sol, eval_profits, eval_wages)
-    println("Here 6")
+    # convert_to_solution!(model.solver,  sol, eval_profits, eval_wages)
+
+    nk = model.solver.nk
+    # Create a matrix of solution
+	model.solver.solution.x = sol.t
+    model.solver.solution.θ = sol[θ]
+    model.solver.solution.μ = sol[μ]
 end
 

@@ -321,7 +321,7 @@ md"ω_A = $omA"
 
 # ╔═╡ 21e354d0-626a-4442-97d7-5eeb94a86982
 begin
-	parameters = Dict(ω_A => omA, ω_B => 0.5, σ_A => 0.5)
+	parameters = Dict(ω_A => 0.5, ω_B => omA, σ_A => 1.1)
 	sol_ = shooting_method(sys, xspan, parameters; tol=1e-5, max_iter = 100)
 	
 	plots_ = [
