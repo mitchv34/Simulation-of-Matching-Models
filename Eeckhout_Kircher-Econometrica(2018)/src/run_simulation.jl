@@ -93,9 +93,9 @@ for j in 1:3
       p_μ.series_list[i][:linecolor] = colors[i]
       p_θ_1.series_list[i][:linecolor] = colors[i]
       p_θ_2.series_list[i][:linecolor] = colors[i]
-      p_μ.series_list[end][:linewidth] = 2
-      p_θ_1.series_list[end][:linewidth] = 2
-      p_θ_2.series_list[end][:linewidth] = 2
+      p_μ.series_list[end][:linewidth] = 2.5
+      p_θ_1.series_list[end][:linewidth] = 2.5
+      p_θ_2.series_list[end][:linewidth] = 2.5
    end
 
    
