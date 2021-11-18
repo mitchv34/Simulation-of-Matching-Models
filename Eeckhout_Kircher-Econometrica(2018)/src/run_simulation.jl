@@ -4,8 +4,8 @@ include("simulation_functions.jl")
 theme(:vibrant) 
 default(fontfamily="Computer Modern", framestyle=:box) # LaTex-style
 
-
-model = initialize_model()
+assortativity = "positive"
+model = initialize_model(assortativity)
 
 ω_A, ω_B, σ_A = model.params # unpack parameters into variables
 
@@ -26,7 +26,7 @@ for val ∈ param_var
    
    param_values_ω_A = Dict(ω_A => val, ω_B => 0.5, σ_A => 0.9)
    param_values_σ_A = Dict(ω_A => 0.3, ω_B => 0.6, σ_A => val)
-   param_values_ω_B = Dict(ω_A => 0.5, ω_B => val, σ_A => 1.1)
+   param_values_ω_B = Dict(ω_A => 0.5, ω_B => val, σ_A => 0.9)
    # pack parameter values into a dictionary
    
    Solution!(model, param_values_ω_A)
@@ -72,7 +72,7 @@ for j in 1:3
       # p_w = plot(matrix_sol[:, 1], matrix_sol[:,3], title="w(x)", xlabel = "x", label="")
       # p_Π = plot(matrix_sol[:, 1], matrix_sol[:,3], title="Π(x)", xlabel = "x", label="")
       plot(p_μ, p_θ_1, p_θ_2, layout=(1,3), size=(1200,450))  
-      savefig("Eeckhout_Kircher-Econometrica(2018)/document/figures/plot_$(field)_$(i).pdf")
+      savefig("Eeckhout_Kircher-Econometrica(2018)/document/figures/plot_$(assortativity)_$(field)_$(i).pdf")
       p_μ.series_list[end][:linealpha] = 0.4
       p_θ_1.series_list[end][:linealpha] = 0.4
       p_θ_2.series_list[end][:linealpha] = 0.4
@@ -101,6 +101,6 @@ for j in 1:3
    
    plot(p_μ, p_θ_1, p_θ_2, layout=(1,3), size=(1200,420))  
    
-   savefig("Eeckhout_Kircher-Econometrica(2018)/document/figures/plot_$(field).pdf")
+   savefig("Eeckhout_Kircher-Econometrica(2018)/document/figures/plot_$(assortativity)_$(field).pdf")
 
 end  

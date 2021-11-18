@@ -108,7 +108,7 @@ end
 #######################################################################################
 
 # This function initializes the model
-function initialize_model()
+function initialize_model(assortativity)
     
     # Defining the variables of the system
     @variables x, y, l, r # Independent variables
@@ -137,9 +137,6 @@ function initialize_model()
 
     type_dist = (workers = wuni, firms = funi)
     
-    # Define the assortativity of the model
-    # TODO: Infer the assortativity from the production function
-    assortativity = "positive"
 
     # Create the solver of the model
     H = 100 * (wuni.b - wuni.a)/(funi.b - funi.a)
@@ -265,6 +262,13 @@ function Solution!(model::Model, param_values)
     x = model.vars[:x]
     x_bounds = model.solver.xspan
     Π = model.Π
+
+    # Check assortativity of the model
+    if param_values[σ_A] < 1
+        assortativity = "positive"
+    else
+        assortativity = "negative"
+    end
 
     # Create save range for the shooting method
     save_range = range(x_bounds[1], stop=x_bounds[2], length = model.solver.nk)

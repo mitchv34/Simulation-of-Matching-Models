@@ -1352,25 +1352,16 @@ INPUT /usr/share/texmf-dist/tex/latex/bbm-macros/ubbm.fd
 INPUT /usr/share/texmf-dist/fonts/tfm/public/bbm/bbm12.tfm
 INPUT /usr/share/texmf-dist/fonts/tfm/public/bbm/bbm8.tfm
 INPUT /usr/share/texmf-dist/fonts/tfm/public/bbm/bbm6.tfm
-INPUT /home/mitchv34/Work/Multi-worker assignment mode/Eeckhout_Kircher-Econometrica(2018)/document/figures/plot_ω_A.pdf
-INPUT /home/mitchv34/Work/Multi-worker assignment mode/Eeckhout_Kircher-Econometrica(2018)/document/figures/plot_ω_A.pdf
-INPUT /home/mitchv34/Work/Multi-worker assignment mode/Eeckhout_Kircher-Econometrica(2018)/document/figures/plot_ω_A.pdf
-INPUT /home/mitchv34/Work/Multi-worker assignment mode/Eeckhout_Kircher-Econometrica(2018)/document/figures/plot_ω_A.pdf
-INPUT /home/mitchv34/Work/Multi-worker assignment mode/Eeckhout_Kircher-Econometrica(2018)/document/figures/plot_ω_A.pdf
-INPUT /home/mitchv34/Work/Multi-worker assignment mode/Eeckhout_Kircher-Econometrica(2018)/document/figures/plot_σ_A.pdf
-INPUT /home/mitchv34/Work/Multi-worker assignment mode/Eeckhout_Kircher-Econometrica(2018)/document/figures/plot_σ_A.pdf
-INPUT /home/mitchv34/Work/Multi-worker assignment mode/Eeckhout_Kircher-Econometrica(2018)/document/figures/plot_σ_A.pdf
-INPUT /home/mitchv34/Work/Multi-worker assignment mode/Eeckhout_Kircher-Econometrica(2018)/document/figures/plot_σ_A.pdf
-INPUT /home/mitchv34/Work/Multi-worker assignment mode/Eeckhout_Kircher-Econometrica(2018)/document/figures/plot_σ_A.pdf
-INPUT /home/mitchv34/Work/Multi-worker assignment mode/Eeckhout_Kircher-Econometrica(2018)/document/figures/plot_ω_B.pdf
-INPUT /home/mitchv34/Work/Multi-worker assignment mode/Eeckhout_Kircher-Econometrica(2018)/document/figures/plot_ω_B.pdf
-INPUT /home/mitchv34/Work/Multi-worker assignment mode/Eeckhout_Kircher-Econometrica(2018)/document/figures/plot_ω_B.pdf
-INPUT /home/mitchv34/Work/Multi-worker assignment mode/Eeckhout_Kircher-Econometrica(2018)/document/figures/plot_ω_B.pdf
-INPUT /home/mitchv34/Work/Multi-worker assignment mode/Eeckhout_Kircher-Econometrica(2018)/document/figures/plot_ω_B.pdf
-INPUT /home/mitchv34/Work/Multi-worker assignment mode/Eeckhout_Kircher-Econometrica(2018)/document/notes.bbl
-INPUT /home/mitchv34/Work/Multi-worker assignment mode/Eeckhout_Kircher-Econometrica(2018)/document/notes.bbl
-INPUT /home/mitchv34/Work/Multi-worker assignment mode/Eeckhout_Kircher-Econometrica(2018)/document/notes.bbl
-INPUT /home/mitchv34/Work/Multi-worker assignment mode/Eeckhout_Kircher-Econometrica(2018)/document/notes.bbl
+INPUT /home/mitchv34/Work/Multi-worker assignment mode/Eeckhout_Kircher-Econometrica(2018)/document/figures/plot_positive_ω_A.pdf
+INPUT /home/mitchv34/Work/Multi-worker assignment mode/Eeckhout_Kircher-Econometrica(2018)/document/figures/plot_positive_ω_A.pdf
+INPUT /home/mitchv34/Work/Multi-worker assignment mode/Eeckhout_Kircher-Econometrica(2018)/document/figures/plot_positive_ω_A.pdf
+INPUT /home/mitchv34/Work/Multi-worker assignment mode/Eeckhout_Kircher-Econometrica(2018)/document/figures/plot_positive_ω_A.pdf
+INPUT /home/mitchv34/Work/Multi-worker assignment mode/Eeckhout_Kircher-Econometrica(2018)/document/figures/plot_positive_ω_A.pdf
+INPUT /home/mitchv34/Work/Multi-worker assignment mode/Eeckhout_Kircher-Econometrica(2018)/document/figures/plot_positive_σ_A.pdf
+INPUT /home/mitchv34/Work/Multi-worker assignment mode/Eeckhout_Kircher-Econometrica(2018)/document/figures/plot_positive_σ_A.pdf
+INPUT /home/mitchv34/Work/Multi-worker assignment mode/Eeckhout_Kircher-Econometrica(2018)/document/figures/plot_positive_σ_A.pdf
+INPUT /home/mitchv34/Work/Multi-worker assignment mode/Eeckhout_Kircher-Econometrica(2018)/document/figures/plot_positive_σ_A.pdf
+INPUT /home/mitchv34/Work/Multi-worker assignment mode/Eeckhout_Kircher-Econometrica(2018)/document/figures/plot_positive_σ_A.pdf
 INPUT /home/mitchv34/Work/Multi-worker assignment mode/Eeckhout_Kircher-Econometrica(2018)/document/notes.aux
 INPUT /home/mitchv34/Work/Multi-worker assignment mode/Eeckhout_Kircher-Econometrica(2018)/document/notes.out
 INPUT /home/mitchv34/Work/Multi-worker assignment mode/Eeckhout_Kircher-Econometrica(2018)/document/notes.out

@@ -262,7 +262,7 @@ end
 function shooting_method(sys, xspan, p; tol=1e-3, max_iter = 10, saveat=[])
 	# Define an initial guess for firm size upper and lower bound
 	firm_size_lower = 0
-	firm_size_upper = 10000
+	firm_size_upper = 10000000
 	guess_firm_size = (firm_size_lower + firm_size_upper)/2
 
 	err = 100
@@ -308,20 +308,20 @@ end
 md"""
 # Changing parameteres - PAM
 Here I will replicate one of the experiments of changing the parameters the others follow in a similar fashion.
-## Changing $\omega_A$ - PAM
+## Changing $\omega_B$ - PAM
 """
 
 # ╔═╡ f20d860b-628c-48ae-9e55-148c83222e77
 md"""
-ω_A: $(@bind omA Slider(0.1:0.1:.9))
+ω_B: $(@bind val Slider(0.05:0.05:.9))
 """
 
 # ╔═╡ 3dde441c-62a0-493c-bec5-2b4e05737027
-md"ω_A = $omA"
+md"val = $val"
 
 # ╔═╡ 21e354d0-626a-4442-97d7-5eeb94a86982
 begin
-	parameters = Dict(ω_A => 0.5, ω_B => omA, σ_A => 1.1)
+	parameters = Dict(ω_A => 0.75, ω_B => val, σ_A => 1.1)
 	sol_ = shooting_method(sys, xspan, parameters; tol=1e-5, max_iter = 100)
 	
 	plots_ = [
@@ -336,8 +336,8 @@ begin
 	θs = []
 	xs = []
 	μs = []
-	for ω ∈ 0.1:0.1:1.0
-		parameters_ = Dict(ω_A => ω, ω_B => 0.5, σ_A => 0.5)
+	for σ ∈ [.1 .2 .4 .6 .8 .99]
+		parameters_ = Dict(ω_A => .3, ω_B => 0.6, σ_A => σ)
 		sol__ = shooting_method(sys, xspan, parameters_; tol=1e-5, max_iter = 100)
 	
 		push!(xs, sol__.t)
@@ -347,15 +347,18 @@ begin
 	end
 end
 
+# ╔═╡ dd1c308b-bdd5-4440-b8f6-9a27034294bd
+μs
+
 # ╔═╡ 1be892f6-fef2-4735-a4c1-3c5eba0a7cc5
-plot([xs[i] for i in 1:9], 
-	[μs[i] for i in 1:9],
+plot([xs[i] for i in 1:6], 
+	[μs[i] for i in 1:6],
 	palette = :RdYlGn_11,
 	label="")
 
 # ╔═╡ 7d0afd3b-6816-4e47-9ceb-179f6a718154
-plot([xs[i] for i in 1:9], 
-	[θs[i] for i in 1:9],
+plot([μs[i] for i in 1:6], 
+	[θs[i] for i in 1:6],
 	palette = :RdYlGn_11,
 	label="", ylims=(0,800))
 
@@ -1927,21 +1930,22 @@ version = "0.9.1+5"
 # ╟─8cb26b26-c71c-40fc-bb88-7407eab44672
 # ╠═9c31c6fd-0811-45f9-a6a3-0eeac613d8de
 # ╠═2a3f8009-581c-4786-b0d0-4749696863d1
-# ╟─d57e719e-1879-495b-b5c7-13a975e8e8b7
+# ╠═d57e719e-1879-495b-b5c7-13a975e8e8b7
 # ╠═a176a196-6016-42d5-bd3e-a537c3e44d27
 # ╠═6e2c2b71-ec0a-43aa-8711-39a4f8280861
 # ╠═9755189f-3899-4227-8f72-c843524d8d3d
 # ╟─29ed847f-a9e8-4c5d-bead-f7633449a3ff
-# ╟─30d0545a-6d1c-482b-8451-58830599bada
+# ╠═30d0545a-6d1c-482b-8451-58830599bada
 # ╟─1210ce21-aa56-4a48-9ecc-f3684cf0eb47
 # ╠═65239247-d118-484e-8a95-5d7317237aad
 # ╠═38a1f079-a38f-48d3-93f0-2679e49e1ff0
 # ╠═b8baceb3-8bd3-4dc5-a2d7-40e52e4b4133
 # ╟─369a51d2-c185-4996-bd69-990792ca2796
-# ╟─f20d860b-628c-48ae-9e55-148c83222e77
+# ╠═f20d860b-628c-48ae-9e55-148c83222e77
 # ╟─3dde441c-62a0-493c-bec5-2b4e05737027
 # ╠═21e354d0-626a-4442-97d7-5eeb94a86982
 # ╠═7335f67f-e130-4bc5-a823-3ab4ae574ab1
+# ╠═dd1c308b-bdd5-4440-b8f6-9a27034294bd
 # ╠═1be892f6-fef2-4735-a4c1-3c5eba0a7cc5
 # ╠═7d0afd3b-6816-4e47-9ceb-179f6a718154
 # ╠═e5dfe3ce-60b5-4404-b32e-5e817b261435
