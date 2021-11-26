@@ -1,9 +1,12 @@
+# println(pwd())
+println("Loadig Packages")
 using LaTeXStrings
 include("simulation_functions.jl")
 
 theme(:vibrant) 
 default(fontfamily="Computer Modern", framestyle=:box) # LaTex-style
 
+println("Initializing Model")
 assortativity = "positive"
 model = initialize_model(assortativity)
 
@@ -22,6 +25,16 @@ solution_plot = Solutions_for_Plots(Dict(), Dict(), Dict())
 
 param_var = [0.5, 0.25, 0.75] # parameter variation
 
+
+μ, θ, w = model.solver.vars
+x = model.vars[:x]
+Dθ = Differential(θ)
+
+eval_wages = eval( build_function( substitute( expand_derivatives( Dθ( model.f ) ), param_values_ω_A ) , [x,θ,μ] ) )
+hcat(model.solver.sol.t, model.solver.sol.u[1,:])
+wages = map(i -> eval_wages(matrix_sol[i, :]), 1:nk)
+
+println("Running Simulations")
 for val ∈ param_var
    
    param_values_ω_A = Dict(ω_A => val, ω_B => 0.5, σ_A => 0.9)
@@ -39,6 +52,8 @@ for val ∈ param_var
    solution_plot.ω_B[val] = model.solver.sol
 
 end
+
+println("Plotting Results")
 
 solver_vars = model.solver.vars
 
@@ -73,7 +88,7 @@ for j in 1:3
       # p_w = plot(matrix_sol[:, 1], matrix_sol[:,3], title="w(x)", xlabel = "x", label="")
       # p_Π = plot(matrix_sol[:, 1], matrix_sol[:,3], title="Π(x)", xlabel = "x", label="")
       plot(p_μ, p_θ_1, p_θ_2, layout=(1,3), size=(1200,450))  
-      savefig("Eeckhout_Kircher-Econometrica(2018)/document/figures/plot_$(assortativity)_$(field)_$(i).pdf")
+      savefig("../document/figures/plot_$(assortativity)_$(field)_$(i).pdf")
       p_μ.series_list[end][:linealpha] = 0.4
       p_θ_1.series_list[end][:linealpha] = 0.4
       p_θ_2.series_list[end][:linealpha] = 0.4
@@ -102,6 +117,6 @@ for j in 1:3
    
    plot(p_μ, p_θ_1, p_θ_2, layout=(1,3), size=(1200,420))  
    
-   savefig("Eeckhout_Kircher-Econometrica(2018)/document/figures/plot_$(assortativity)_$(field).pdf")
+   savefig("../document/figures/plot_$(assortativity)_$(field).pdf")
 
 end  
