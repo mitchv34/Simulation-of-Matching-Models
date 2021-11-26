@@ -217,35 +217,56 @@
 \end{frame}
 
 \subsection{Simulation Results}
-\begin{frame}{Effect of changing $\omega_A$}
-	\begin{columns}[T]
-		\begin{column}{.7\textwidth}
-			\only<1>{\resizebox{\textwidth}{!}{
-			  \includegraphics{figures/plot_positive_ω_A_1.pdf}
-			}
-		  }
-			\only<2>{\resizebox{\textwidth}{!}{
-			  \includegraphics{figures/plot_positive_ω_A_2.pdf}
-			}
-		  }
-			\only<3>{\resizebox{\textwidth}{!}{
-			  \includegraphics{figures/plot_positive_ω_A_3.pdf}
-			}
-		  }
-		\end{column}
-		\hfill
-		\begin{column}{.3\textwidth}
-		  \begin{wideitemize}
-		  \item<1-> Sometimes you want to talk about one effect
-		  \item<2-> Then switch to a second effect 
-		  \item<3-> Use the \texttt{\textbackslash only<slidenum>} command
-		  \item<3-> For the effect, keep the similar axes
-		  \end{wideitemize}
-		  \end{column}
-		\end{columns}
-		\begin{wideitemize}
-			\item{} \textbf{Parametrization} $x,y \sim U[0,1]$, $\omega_B = 0.5$ and $\sigma_A = 0.9$
-		\end{wideitemize}
+\begin{frame}{Effect of changing $\omega_A$} 
+	\only<1>{
+	\begin{wideitemize}
+		\item{} When $\omega_A = 0.5$ workers and firms are equally weighted.
+		\item{} Fully symmetric model, mathing $\mu(x) = x$, reach constant size
+	\end{wideitemize}
+	}
+	\only<2>{
+	\begin{wideitemize}
+		\item{} $\omega_A \in (0.5, 1]$ worker type is more determinant in production.
+		\item{} The size effect dominates the type effect $\implies$ matching is concave and firm size is increasing.
+	\end{wideitemize}
+	}
+	\only<3>{
+	\begin{wideitemize}
+		\item{} $\omega_A \in [0, 0.5)$ firm type is more determinant in production.
+		\item{} The type effect dominates the size effect $\implies$ matching is convex and firm size is decreasing.
+	\end{wideitemize}
+	}	
+	\centering
+	\only<1>{\resizebox{12.5cm}{!}{
+		\includegraphics{figures/plot_positive_ω_A_1.pdf}
+	}
+	}
+	\only<2>{\resizebox{12.5cm}{!}{
+		\includegraphics{figures/plot_positive_ω_A_2.pdf}
+	}
+	}
+	\only<3>{\resizebox{12.5cm}{!}{
+		\includegraphics{figures/plot_positive_ω_A_3.pdf}
+	}
+	}
+	
+	\begin{wideitemize}
+		\item{} \textbf{Parametrization} $x,y \sim U[0,1]$, $\omega_B = 0.5$ and $\sigma_A = 0.9$
+		\only<3>{\item{} \hyperlink{appendix_wage_change_omega_A}{\beamergotobutton{Effect in wages}}}
+	\end{wideitemize}
 \end{frame}
+
+\section{Appendix}
+\begin{frame}[label=appendix_wage_change_omega_A]{Use it to intimidate audiences!}
+	\begin{wideitemize}
+	  \item[] Now you can make it clear you've done a shitload of work
+		\begin{itemize}
+		\item[]  without having to show everything! \hyperlink{appendix_start}{\beamergotobutton{Back}}
+		\end{itemize}
+	  \item[] You label a frame with the \texttt{[label=name]} option, and then point a link to it
+	  \item[] You can make an object a link using the \texttt{\textbackslash hyperlink\{label\}\{object\}} command
+	\end{wideitemize}
+  \end{frame}
+
 
 \end{document}
