@@ -1,0 +1,10 @@
+\beamer@sectionintoc {1}{Introduction}{2}{0}{1}
+\beamer@sectionintoc {2}{Model}{3}{0}{2}
+\beamer@subsectionintoc {2}{1}{Model set-up}{4}{0}{2}
+\beamer@subsectionintoc {2}{2}{Equilibrium}{4}{0}{2}
+\beamer@subsubsectionintoc {2}{2}{1}{Characterization of Equilibrium}{4}{0}{2}
+\beamer@subsubsectionintoc {2}{2}{2}{Assortativity Characterization}{4}{0}{2}
+\beamer@subsubsectionintoc {2}{2}{3}{Equilibrium Assignment}{4}{0}{2}
+\beamer@sectionintoc {3}{Simulation}{4}{0}{3}
+\beamer@subsectionintoc {3}{1}{Simulation Strategy}{5}{0}{3}
+\beamer@subsectionintoc {3}{2}{Simulation Results}{6}{0}{3}

@@ -53,13 +53,14 @@ for j in 1:3
    p_θ_2 = plot()
    
    lab = labels[field]
+   scal = 2
    for i∈1:3
 
       x = param_var[i]
-      p_μ = plot!(p_μ, s[x].t, s[x][solver_vars[:μ]], title=L"\mu(x)", xlabel = L"x", label="")
-      p_θ_1 = plot!(p_θ_1, s[x].t, s[x][solver_vars[:θ]], title=L"\theta(x)", xlabel = L"x", label=L"%$(lab) = %$x")
+      p_μ = plot!(p_μ, s[x].t, s[x][solver_vars[:μ]], title=L"\mu(x)", xlabel = L"x", label="",  thickness_scaling = scal)
+      p_θ_1 = plot!(p_θ_1, s[x].t, s[x][solver_vars[:θ]], title=L"\theta(x)", xlabel = L"x", label=L"%$(lab) = %$x",  thickness_scaling = scal)
       ylims!(0,400)
-      p_θ_2 = plot!(p_θ_2, s[x][solver_vars[:μ]], s[x][solver_vars[:θ]], title=L"\theta(\mu(x))", xlabel = L"\mu(x)", label="")
+      p_θ_2 = plot!(p_θ_2, s[x][solver_vars[:μ]], s[x][solver_vars[:θ]], title=L"\theta(\mu(x))", xlabel = L"\mu(x)", label="",  thickness_scaling = scal)
       ylims!(0,400)
       p_μ.series_list[end][:linecolor] = "#d1244f"
       p_θ_1.series_list[end][:linecolor] = "#d1244f"
