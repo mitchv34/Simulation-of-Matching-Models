@@ -1,11 +1,11 @@
-\beamer@sectionintoc {1}{Introduction}{2}{0}{1}
-\beamer@sectionintoc {2}{Model}{3}{0}{2}
-\beamer@subsectionintoc {2}{1}{Model set-up}{4}{0}{2}
-\beamer@subsectionintoc {2}{2}{Equilibrium}{4}{0}{2}
-\beamer@subsubsectionintoc {2}{2}{1}{Characterization of Equilibrium}{4}{0}{2}
-\beamer@subsubsectionintoc {2}{2}{2}{Assortativity Characterization}{4}{0}{2}
-\beamer@subsubsectionintoc {2}{2}{3}{Equilibrium Assignment}{4}{0}{2}
-\beamer@sectionintoc {3}{Simulation}{4}{0}{3}
-\beamer@subsectionintoc {3}{1}{Simulation Strategy}{5}{0}{3}
-\beamer@subsectionintoc {3}{2}{Simulation Results}{6}{0}{3}
-\beamer@sectionintoc {4}{Appendix}{9}{0}{4}
+\beamer@sectionintoc {1}{Introduction}{3}{0}{1}
+\beamer@sectionintoc {2}{Model}{7}{0}{2}
+\beamer@subsectionintoc {2}{1}{Model set-up}{8}{0}{2}
+\beamer@subsectionintoc {2}{2}{Equilibrium}{10}{0}{2}
+\beamer@subsubsectionintoc {2}{2}{1}{Characterization of Equilibrium}{13}{0}{2}
+\beamer@subsubsectionintoc {2}{2}{2}{Assortativity Characterization}{16}{0}{2}
+\beamer@subsubsectionintoc {2}{2}{3}{Equilibrium Assignment}{19}{0}{2}
+\beamer@sectionintoc {3}{Simulation}{20}{0}{3}
+\beamer@subsectionintoc {3}{1}{Simulation Strategy}{21}{0}{3}
+\beamer@subsectionintoc {3}{2}{Simulation Results}{22}{0}{3}
+\beamer@sectionintoc {4}{Appendix}{25}{0}{4}
