@@ -67,6 +67,16 @@
 \definecolor{yellow}{RGB}{240,228,66}
 \definecolor{green}{RGB}{0,158,115}
 
+% % Enviroments
+% \newtheorem{defin}{Definition.}
+% \newtheorem{teo}{Theorem. }
+% \newtheorem{lema}{Lemma. }
+% \newtheorem{coro}{Corolary. }
+% \newtheorem{prop}{Proposition. }
+% \theoremstyle{definition}
+% \newtheorem{examp}{Example. }
+% % \numberwithin{problem}{subsection} 
+
 \hypersetup{
   colorlinks=false,
   linkbordercolor = {white},
@@ -97,13 +107,12 @@
 \setbeamercolor{enumerate item}{fg=blue}
 \setbeamercolor{enumerate subitem}{fg=blue}
 \setbeamercolor{button}{bg=MyBackground,fg=blue,}
-
-
+\setbeamercolor{theotem}{fg=blue} 
 
 % If you like road maps, rather than having clutter at the top, have a roadmap show up at the end of each section 
 % (and after your introduction)
 % Uncomment this is if you want the roadmap!
-\AtBeginSection[]
+\AtBeginSubsection[]
 {
    \begin{frame}
        \frametitle{Roadmap of Talk}
@@ -193,25 +202,22 @@
 
 % Unnamed Slide with research questions
 \begin{frame}{Research Questions}
-	\textbf{Research Question}
-Provide a unifying theory of production with a trade-off between hiring more versus better workers.
+	\begin{wideitemize}
+	\item \textcolor{red}{\textbf{Research Question}}
+	\begin{wideitemize}
+		\item Provide a unifying theory of production with a trade-off between hiring more vs better workers.
+	\end{wideitemize}
 
-\textbf{Results}
-\begin{wideitemize}
-    \item  A sorting condition that captures the trade-off between quantity and quality of workers. 
+	\pause
+
+	\item \textcolor{red}{\textbf{Results}}
+	\begin{wideitemize}
+		\item Sorting condition that captures the trade-off between quantity and quality of workers.
+		\item Characterization of matching in equilibrium.
+		\item When is matching assortative \textbf{(PAM)} or \textbf{(NAM)}?
+		\item Under what conditions more productive firms hire more workers in equilibrium?
+	\end{wideitemize}
 \end{wideitemize}
-
-The model should deliver the following results:
-\begin{itemize}
-    \item Characterization of matching in equilibrium.
-    \begin{wideitemize}
-        \item When is matching assortative \textbf{(PAM)} or \textbf{(NAM)}?
-        \begin{wideitemize}
-            \item When are more productive workers hired by more productive firms?
-        \end{wideitemize}
-        \item Under what conditions more productive firms hire more workers in equilibrium?
-    \end{wideitemize}
-\end{itemize}
 
 \end{frame}
 
@@ -219,52 +225,225 @@ The model should deliver the following results:
 \section{Model}
 
 \subsection{Model set-up}
-% Model setup silde
-\begin{frame}{Model Setup}
+% Model setup silde 1 Demographics
+\begin{frame}{Model Setup: Demographics}
+
+	\begin{wideitemize}
+		\item  \textbf{Workers} indexed by \textit{unidimensional} skill $x\in[\underline{x},  \bar{x} ]\subset \mathbb{R}_+$
+		\begin{itemize}
+			\item  \textit{CDF} $H^w(x)$ and \textit{PDF} $h^w$  
+		\end{itemize}
+		\item  \textbf{Firms} indexed by \textit{unidimensional} productivity $y\in[\underline{y},  \bar{y} ]\subset \mathbb{R}_+$
+    \begin{itemize}
+        \item \textit{CDF} $H^f(x)$ and \textit{PDF} $h^f$  
+    \end{itemize}
+\end{wideitemize}
 \end{frame}
-% Model setup slide 2 production function
-\begin{frame}{Production Function}
+
+% Model setup silde 2 Preferences
+\begin{frame}{Model Setup: Preferences}
+
+	
+	\begin{wideitemize}
+		\item Linear utility model.
+		\item \textbf{Workers} care about their wage and there is no disutility of work.
+		\item  \textbf{Firms} maximize their profits.
+	\end{wideitemize}
+
+\end{frame}
+
+% Model setup slide 3 production function
+\begin{frame}{Model Setup:  Production Function}
+	\begin{wideitemize}
+		\item The output produced by a firm of type $y$ that hires $l$ workers of type $x$ is: \[F(x,y,l,r)\]
+		\begin{itemize}
+			\item $r$ the fraction of $y$ resources dedicated to $x$ type workers.
+			\item $(x,y)$ are quality variables and $(l,r)$ are quantity variables.
+		% 	\item The resource might reflect the time endowment of an entrepreneur who spends time interacting with and supervising her employees.
+		% 	\begin{itemize}
+		% 		\item Under this interpretation buying resources in the market (like capital) is excluded from the problem.
+		% 	\end{itemize}
+		% 	\item The quality might refer to the value of the final output.
+		\end{itemize}
+		\item $F$ is strictly increasing and strictly concave in $(l,r)$, $0$ resources produce $0$ output, and standard Inada conditions apply.
+		%  \item  Consider the cross-partials of the output function:
+		% \begin{itemize}
+		%   \item $F_{xy}$ If positive, means that higher firm types have, ceteris paribus, a higher marginal return for matching with higher worker types.
+		%   \item $F_{yl}$ If it is large, it means that higher firm types have a higher marginal valuation.
+		%   \item $F_{xr}$ Expresses how the marginal product of resources spent on workers varies with worker type.
+		%   \item  $F_{lr}$ Captures the extent to which additional labor decreases the value of output.
+		% \end{itemize}
+		\item  $F$ has constant returns to scale in $l$ and $r$.
+		\pause
+		\item  We can write $F$ in terms of \textbf{intensity} $\theta=l/r$ :\[f(x,y,\theta):=F(x,y,\theta,1)\quad \implies \quad F(x,y,l,r) = rf(x,y,\theta)\]
+		% \item Either $F$ or $f$ can be used as the primitive of the model.
+	\end{wideitemize}
 \end{frame}
 
 
 \subsection{Equilibrium}
 % Equilibrium slide 1: Firm's Problem
 \begin{frame}{Equilibrium}
+	\begin{wideitemize}
+		\item The equilibrium concept used is the competitive equilibrium.
+		\pause
+		\item \textcolor{red}{Firm's problem:}
+		\begin{wideitemize}
+			% \item  Firms choose two distributions
+			\item  Distribution of workers hired by $y$ $\mathcal{L}^y(x) = \int_{\underline{x}}^xl^y(\tilde{x})dH^w(\tilde{x})$ 
+			\item  Distribution of firm $y$ resources $\mathcal{R}^y(x) = \int_{\underline{x}}^xr^y(\tilde{x})dH^w(\tilde{x})$
+			\pause
+			\item  For any $x\in[\underline{x}, \bar{x}]$ $l^y(x) = \theta^y(x)r^y(x)$ which means 
+			\begin{equation}\label{labor_demand}
+			\mathcal{L}^y(x) = \int_{\underline{x}}^x\theta^y(\tilde{x})d\mathcal{R}^y(\tilde{x}).
+			\end{equation}
+			\item The total output of the firm can be writen as:
+			\[\int_{\underline{x}}^{\overline{x}} f\left(x, y, \theta^{y}(x)\right) d \mathcal{R}^{y}(x) = \int_{\underline{x}}^{\overline{x}} F\left(x, y, l^y(x), r^y(x)\right) d \mathcal{H}^{w}(x)\]
+			\item  Firms maximize the difference between output produced and wages paid to workers.  
+		\end{wideitemize}
+	\end{wideitemize}
 \end{frame}
+
 
 % Slide feasible demand
 \begin{frame}{Feasible Demand}
+	\begin{wideitemize}
+		\item Consider an interval of worker types $(x',x]$
+		\item The demand of firm $y$ for shc workers is $\mathcal{L}^y(x) - \mathcal{L}^y(x')$
+		\item The total demand for those workers is the integral over all firms.
+		\item This implies a way to evaluate if a labor demand schedule $\{\mathcal{L}^y\}_{y\in \mathcal{Y}}$ is feasible:\[\int_{y}\left[\mathcal{L}^{y}(x)-\mathcal{L}^{y}\left(x^{\prime}\right)\right] d H^{f} \leq H^{w}(x)-H^{w}\left(x^{\prime}\right) \qquad \forall  (x',x]\subseteq\mathcal{X}\]
+	\end{wideitemize}
+	% Note that for any interval of worker types $(x', x]$, a firm of type $y$ has a demand for such workers of $\mathcal{L}^y(x)-\mathcal{L}^y(x')$ then the aggregate demand for such workers is the integral over all firms $y\in \mathcal{Y}$. 
+	% This implies a way to evaluate if a labor demand schedule $\{\mathcal{L}^y\}_{y\in \mathcal{Y}}$ is feasible:$$\int_{y}\left[\mathcal{L}^{y}(x)-\mathcal{L}^{y}\left(x^{\prime}\right)\right] d H^{f} \leq H^{w}(x)-H^{w}\left(x^{\prime}\right) \qquad \forall  (x',x]\subseteq\mathcal{X}$$
 \end{frame}
 
 % Slide equilibrium definition
 \begin{frame}{Equilibrium Definition}
+	An equilibrium is a tuple of functions $\left(w, \theta^{y}, \mathcal{R}^{y}, \mathcal{L}^{y}\right)$ consisting of a non-negative wage schedule $w(x)$ as well as intensity functions $\theta^{y}(x)$ and resource allocations $\mathcal{R}^{y}(x)$ with associated feasible labor demands $\mathcal{L}^{y}(x)$ (determined as in \eqref{labor_demand}) such that:
+	\pause
+\begin{wideitemize}
+    \item[1]\textbf{Optimality:} Given the wage schedule $w(x)$, for any $y$, the combination $\left(\theta^{y}, \mathcal{R}^{y}\right)$ solves:$$\max _{\theta y, \mathcal{R}^{y}} \int\left[f\left(x, y, \theta^{y}(x)\right)-w(x) \theta^{y}(x)\right] d \mathcal{R}^{y}(x)$$
+	\item[2] \textbf{Market Clearing:} For any $(x',x]\subseteq\mathcal{X}$
+    \[\text{If } w(x)>0 \text{ a.e in } (x', x]  \quad \implies \quad   \int_{y}\left[\mathcal{L}^{y}(x)-\mathcal{L}^{y}\left(x^{\prime}\right)\right] d H^{f} = H^{w}(x)-H^{w}\left(x^{\prime}\right) \]
+\end{wideitemize}
 \end{frame}
 
 \subsubsection{Characterization of Equilibrium}
 % Slide equilibrium characterization
 \begin{frame}{Equilibrium Characterization}
+	\begin{wideitemize}
+		\item  When do better firms hire \textbf{better} workers?
+		\item  How are wages determined?
+		\item  When do better firms employ \textbf{more} workers?
+		\item  How is that affected by technological change?
+	\end{wideitemize}
+	
 \end{frame}
 
 % Slide Equilibrium Assortativity
 \begin{frame}{Equilibrium Assortativity}
+	\textcolor{green}{\textbf{Definition}} (Assortative Matching) 
+	\begin{wideitemize}
+	\item We say that matching between firms and workers is PAM (NAM) if higher type firms hire higher type workers, i.e., $y>y'$ then, $x$ in the support of $\mathcal{L}^y$ and $x'$ in the support of $\mathcal{L}^{y'}$ only if $x\geq (\leq) x'$.
+	\end{wideitemize}
 \end{frame}
 
 % Slide Sketch of proof Proposition 1
-\begin{frame}{Sketch of Proposition 1}
+\begin{frame}[label=prop_1_slide]{Equilibrium Characterization}
+	\only<1>{
+		\textcolor{red}{\textbf{Proposition 1}} \label{prop1}
+		\begin{wideitemize}
+			\item If output $F$ is strictly increasing in $x$ and $y$ and the type distributions have nonzero continuous densities, then almost all active firm types y hire exactly one worker type and reach unique size $l(y)$ in an assortative equilibrium.
+			\item There is an injective matching function $\mu:\mathcal{\tilde{X}}\to\mathcal{\tilde{Y}}$, between the subset of hired workers and active firms.
+		\end{wideitemize}
+	}
+	\only<2>{
+		The proof have two parts:
+		\begin{wideitemize}
+			\item First we show that for every hired worker the combination $(x,\theta^y(x))$ solves \hyperlink{appendix_steps_prop_1_1<1>}{\beamergotobutton{Details}}
+			\begin{equation}\label{simple_max}
+			(x,\theta^y(x)) \in \arg\max \left\{ f(\tilde{x}, y, \tilde{\theta})-\tilde{\theta} w(\tilde{x}) \right \} \qquad \forall x\in \text{supp}\mathcal{R}^y
+			\end{equation}
+			\begin{wideitemize}
+				\item An implication is that in equilibirum if a worker is hired then all wokers that are more productive must have strictly possitive wages.
+			\end{wideitemize}
+		\end{wideitemize}
+		}
+		\only<3>{
+		\begin{wideitemize}
+			\item Second, assume that a firm hires two different workers $x'<x$, if the equilibirum is \textbf{PAM} then that firm must be the only firm that hire workers in $[x',x]$.
+			\item If there is only one firm active in $[x',x]$ then the aggregate labor demand has zero measure and by market clearing $w(\hat{x})=0$ for all $\hat{x} \in (x',x)$.
+			\item This contradicts what we showed.
+		\end{wideitemize}
+	}
 \end{frame}
-
 
 \subsubsection{Assortativity Characterization}
 % Slide Conditions for assortative equilibrium
-\begin{frame}{Conditions for Assortative Equilibrium}
+\begin{frame}[label=condition_assort]{Conditions for Assortative Equilibrium}
+	\begin{wideitemize}
+		\only<1>{
+		\item We can restrict our attention to the problem \[max_{x,\theta(x)}\:  f(x, \mu(x), \theta(x))-\theta(x) w(x)\] 
+		
+		\item Taking first and second order conditios \hyperlink{appendix_algebra_assort_char_1<1>}{\beamergotobutton{Details}} we arrive at the expression:
+			\[\textcolor{red}{\mu^{\prime}(x)}\left[f_{\theta \theta}f_{x y} - f_{y \theta}\left(f_{x \theta}-\frac{f_{x}}{\theta(x)}\right)\right] < 0 \]
+		}
+		\only<2>{
+		\item Note that a \textbf{PAM} equilibrium requires $\mu'(x)>0$, this implies a necessary condition: \[f_{\theta \theta}f_{x y} - f_{y \theta}\left(f_{x \theta}-\frac{f_{x}}{\theta(x)}\right) < 0\]
+
+		\item We can write this condition in terms of $F$ \hyperlink{appendix_algebra_from_f_to_F<1>}{\beamergotobutton{Details}} to deal with the potential endogeneity of $\theta(x)$: \[F_{x y} > \frac{F_{y l} F_{x r}}{F_{l r}}\]
+		\item We have found a necessary condition for the equilibirum matching to be \textbf{PAM}, tunrs out that this is also a sufficient condition.
+		}
+	\end{wideitemize}
 \end{frame}
 
 % Slide Main results: Proposition 2
-\begin{frame}{Main Results: Proposition 2}
-\end{frame}
+\begin{frame}[label=main_result]{Main Asssortativity Result}
+	\only<1>{
+		\textcolor{red}{\textbf{Proposition 2}} \label{prop1}
+		\begin{wideitemize}
+			\item A necessary and sufficient condition to have equilibria with positive assortative matching is that the following inequality holds:
 
-% Slide Sketch of proof Proposition 2
-\begin{frame}{Sketch of Proposition 2}
+			\begin{equation}\label{pam_cond}
+				F_{x y} > \frac{F_{y l} F_{x r}}{F_{l r}}    
+			\end{equation}
+			
+			for all $(x, y, l, r) \in \mathbb{R}_{++}^{4} .$
+			
+			The opposite inequality provides a necessary and sufficient condition for negative assortative matching.
+		\end{wideitemize}
+	}
+	\only<2>{
+		
+		\begin{wideitemize}
+			\item Since the firm's problem is quasi-linear then Pareto optimality requires output maximization. 
+			\item This is the key idea behind the proof: if \eqref{pam_cond} holds then the output of any not positive assortative allocation can be strictly improved implying that it is not an equilibrium.
+		\end{wideitemize}
+		}
+		\only<3>{
+		\begin{wideitemize}
+			\item Consider some matching $(x,y,\theta)$ such that a total measure $r$ of resources is deployed in this match, the output generated is \[F(x,y,\theta r, r) = r f(x,y,\theta)\]
+			\item We can show \hyperlink{appendix_proof_prop_2<1>}{\beamergotobutton{Details}} that the marginal change of shifting an optimal measure of workers from firm $y$ to firm $\hat{y}$:
+
+			\begin{equation}\label{beta_defin}
+			\beta(\hat{y};x,y,\theta) = f(x,\hat{y}, \hat{\theta}) - \hat{\theta}f_\theta(x,y,\theta) \quad \text{where} \quad f_\theta(x,y,\theta)=f_\theta(x,\hat{y},\hat{\theta})
+			\end{equation}
+
+		\end{wideitemize}
+	}
+	\only<4>{
+		\begin{wideitemize}
+			\item Suppose that equilibrium matching is not \textbf{PAM}, i.e  $x_{1}$ is matched to $y_{1}$ at intensity $\theta_{1}$ and $x_{2}$ to $v_{2}$ at intensity $\theta_{2}$, but $x_{1}>x_{2}$ while $y_{1}<y_{2}$, for this match to be efficient the following two inequalities mus \textbf{simultaneously} hold:
+
+			\begin{equation}\label{beta_y1}
+				\beta(y_1; x_2, y_2, \theta_2) \leq \beta(y_1; x_1, y_1, \theta_1) 
+			\end{equation}
+			\begin{equation}\label{beta_y2}
+				\beta(y_2; x_1, y_1, \theta_1) \leq \beta(y_2; x_2, y_2, \theta_2) 
+			\end{equation}
+		\item To finalize the proof we show that \eqref{beta_y1}, \eqref{beta_y2} and \eqref{pam_cond} leads to a contradiction \hyperlink{appendix_proof_prop_2<2>}{\beamergotobutton{Details}}.
+		\end{wideitemize}
+	}
 \end{frame}
 
 \subsubsection{Equilibrium Assignment}
@@ -279,10 +458,7 @@ The model should deliver the following results:
 	\begin{wideitemize}
 		
 		\item{} To simulate the model we will use the following production function:
-
-			\begin{equation}\label{prod_funct}
-				f(x,y,\theta) = \left(\omega_{A} x^{\left(1-\sigma_{A}\right) / \sigma_{A}}+\left(1-\omega_{A}\right) y^{\left(1-\sigma_{A}\right) / \sigma_{A}}\right)^{\sigma_{A} /\left(1-\sigma_{A}\right)} \theta^{\omega_{B}}
-			\end{equation}
+				\[f(x,y,\theta) = \left(\omega_{A} x^{\left(1-\sigma_{A}\right) / \sigma_{A}}+\left(1-\omega_{A}\right) y^{\left(1-\sigma_{A}\right) / \sigma_{A}}\right)^{\sigma_{A} /\left(1-\sigma_{A}\right)} \theta^{\omega_{B}}\]
 	
 		\item{}	Computing condition \ref{pam_cond_simple} for this production function we get:
 				\begin{equation}
@@ -297,7 +473,7 @@ The model should deliver the following results:
 				\end{equation}
 	
 		\item{} Clearly the condition for \textbf{PAM} holds if $\sigma_A < 1$ and we will have \textbf{NAM} if $\sigma_A > 1$.
-		\end{wideitemize}
+	\end{wideitemize}
 \end{frame}
 
 \subsection{Simulation Results}
@@ -341,6 +517,51 @@ The model should deliver the following results:
 \end{frame}
 
 \section{Appendix}
+\begin{frame}[label=appendix_steps_prop_1_1]{}
+	\begin{itemize}
+		\only<1>{
+			\item Suppose that a firm $y$ that uses strategy $(\theta^y, \mathcal{R}^y)$ to solve the problem 
+				\begin{equation}\label{complex_max}
+				\max _{\theta y, \mathcal{R}^{y}} \int\left[f\left(x, y, \theta^{y}(x)\right)-w(x) \theta^{y}(x)\right] d \mathcal{R}^{y}(x)
+				\end{equation}
+			\item Proceed by contradiction, and suppose that there is a set of hired workers $\tilde{\mathcal{X}}$ for which their assigned resources do not solve
+				\[(x,\theta^y(x)) \in \arg\max \left\{ f(\tilde{x}, y, \tilde{\theta})-\tilde{\theta} w(\tilde{x}) \right \} \qquad \forall x\in \text{supp}\mathcal{R}^y\]
+			\item Define:
+				\[\mathcal{X}^*=\left\{x\in \mathcal{X}\mid (x,\theta^*(x)) \in \arg\max \left\{ f(\tilde{x}, y, \tilde{\theta})-\tilde{\theta} w(\tilde{x}) , \text{for some } \theta^*\right \} \right\}$$ $$\tilde{\mathcal{X}} = \mathcal{X} / \mathcal{X}^*\]
+		}
+		\only<2>{
+			\item Consider any $x^* \in \mathcal{X}^*$ and a strategy where the firm places or the resources on $x^*$ at intensity $\theta^*$ we have:
+				\[f(x,y,\theta^y(x)) = f(x^*, y, \theta^*) \qquad \forall x\in \mathcal{X}^*\]
+				\[f(x,y,\theta^y(x)) < f(x^*, y, \theta^*) \qquad \forall x\in \tilde{\mathcal{X}}\]
+			\item Note that the profits pf the firm are:
+			\begin{align*}
+				\int_{\mathcal{X}^*}\left[f(x,y,\theta^y(x)) - w(x)\theta^y(x)\right]d\mathcal{R}^y(x) &+ \int_{\tilde{\mathcal{X}}}\left[f(x,y,\theta^y(x)) - w(x)\theta^y(x)\right]d\mathcal{R}^y(x)\\
+				&<\\
+				\int_{\mathcal{X}^*}\left[f(x^*,y,\theta^*) - w(x^*)\theta^*\right]d\mathcal{R}^y(x) &+ \int_{\tilde{\mathcal{X}}}\left[f(x^*,y,\theta^*) - w(x^*)\theta^*\right]d\mathcal{R}^y(x)
+			\end{align*}
+
+	\item The firm can strictly increase its profits, therefore the original strategy is not a solution of \eqref{complex_max}.  \hyperlink{prop_1_slide<2>}{\beamergotobutton{Back}}
+	}
+\end{itemize}
+\end{frame}
+
+\begin{frame}[label=appendix_algebra_assort_char_1]{slide 1}
+	\hyperlink{condition_assort<1>}{\beamergotobutton{Back}}
+\end{frame}
+
+\begin{frame}[label=appendix_algebra_from_f_to_F]{slide 2}
+	\hyperlink{condition_assort<2>}{\beamergotobutton{Back}}
+\end{frame}
+
+\begin{frame}[label=appendix_proof_prop_2]{slide 3}oo
+	\only<1>{
+		\hyperlink{main_result<3>}{\beamergotobutton{Back}}
+	}
+	\only<2>{
+		\hyperlink{main_result<4>}{\beamergotobutton{Back}}
+	}
+\end{frame}
+
 \begin{frame}[label=appendix_wage_change_omega_A]{Use it to intimidate audiences!}
 	\begin{wideitemize}
 	  \item[] Now you can make it clear you've done a shitload of work

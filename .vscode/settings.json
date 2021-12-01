@@ -1,0 +1,20 @@
+{
+    "grammarly.overrides": [
+        {
+            "files": [
+                "**/Eeckhout_Kircher-Econometrica(2018)/document/notes.tex"
+            ],
+            "config": {
+                "audience": "expert",
+                "dialect": "american",
+                "domain": "academic",
+                "emotions": [
+                    "analytical"
+                ],
+                "goals": [
+                    "convince"
+                ]
+            }
+        }
+    ]
+}
