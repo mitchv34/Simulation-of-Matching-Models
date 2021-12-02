@@ -1,11 +1,10 @@
 \beamer@sectionintoc {1}{Introduction}{3}{0}{1}
 \beamer@sectionintoc {2}{Model}{7}{0}{2}
 \beamer@subsectionintoc {2}{1}{Model set-up}{7}{0}{2}
-\beamer@subsectionintoc {2}{2}{Equilibrium}{12}{0}{2}
-\beamer@subsubsectionintoc {2}{2}{1}{Characterization of Equilibrium}{19}{0}{2}
-\beamer@subsubsectionintoc {2}{2}{2}{Assortativity Characterization}{24}{0}{2}
-\beamer@subsubsectionintoc {2}{2}{3}{Equilibrium Assignment}{30}{0}{2}
-\beamer@sectionintoc {3}{Simulation}{31}{0}{3}
-\beamer@subsectionintoc {3}{1}{Simulation Strategy}{31}{0}{3}
-\beamer@subsectionintoc {3}{2}{Simulation Results}{33}{0}{3}
-\beamer@sectionintoc {4}{Appendix}{37}{0}{4}
+\beamer@subsectionintoc {2}{2}{Equilibrium}{13}{0}{2}
+\beamer@subsubsectionintoc {2}{2}{1}{Sorting Condition}{22}{0}{2}
+\beamer@subsubsectionintoc {2}{2}{2}{Equilibrium Assignment}{33}{0}{2}
+\beamer@sectionintoc {3}{Simulation}{37}{0}{3}
+\beamer@subsectionintoc {3}{1}{Simulation Strategy}{37}{0}{3}
+\beamer@subsectionintoc {3}{2}{Simulation Results}{40}{0}{3}
+\beamer@sectionintoc {4}{Appendix}{50}{0}{4}

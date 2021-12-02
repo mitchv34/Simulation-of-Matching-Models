@@ -32,7 +32,7 @@
 \usepackage{multirow}
 \usepackage{graphicx}
 \usepackage{dcolumn}
-% \usepackage{bbm}
+\usepackage{bbm}
 \newcolumntype{d}[0]{D{.}{.}{5}}
 
 \usepackage{changepage}
@@ -255,16 +255,17 @@
 % Model setup slide 3 production function
 \begin{frame}{Model Setup:  Production Function}
 	\begin{wideitemize}
-		\item The output produced by a firm of type $y$ that hires $l$ workers of type $x$ is: \[F(x,y,l,r)\]
+		\item The output produced by a firm of type \textcolor{red}{$y$} that hires \textcolor{green}{$l$} workers of type \textcolor{red}{$x$} is: \[F(\textcolor{red}{x,y},\textcolor{green}{l,r})\]
 		\begin{itemize}
-			\item $r$ the fraction of $y$ resources dedicated to $x$ type workers.
-			\item $(x,y)$ are quality variables and $(l,r)$ are quantity variables.
+			\item \textcolor{green}{$r$} the fraction of \textcolor{red}{$y$}'s resources dedicated to \textcolor{red}{$x$} type workers.
+			\item \textcolor{red}{$(x,y)$} are quality variables and \textcolor{green}{$(l,r)$} are quantity variables.
 		% 	\item The resource might reflect the time endowment of an entrepreneur who spends time interacting with and supervising her employees.
 		% 	\begin{itemize}
 		% 		\item Under this interpretation buying resources in the market (like capital) is excluded from the problem.
 		% 	\end{itemize}
 		% 	\item The quality might refer to the value of the final output.
 		\end{itemize}
+		\pause
 		\item $F$ is strictly increasing and strictly concave in $(l,r)$, $0$ resources produce $0$ output, and standard Inada conditions apply.
 		%  \item  Consider the cross-partials of the output function:
 		% \begin{itemize}
@@ -306,12 +307,15 @@
 
 
 % Slide feasible demand
-\begin{frame}{Feasible Demand}
+\begin{frame}{Equilibrium}
 	\begin{wideitemize}
-		\item Consider an interval of worker types $(x',x]$
-		\item The demand of firm $y$ for shc workers is $\mathcal{L}^y(x) - \mathcal{L}^y(x')$
-		\item The total demand for those workers is the integral over all firms.
-		\item This implies a way to evaluate if a labor demand schedule $\{\mathcal{L}^y\}_{y\in \mathcal{Y}}$ is feasible:\[\int_{y}\left[\mathcal{L}^{y}(x)-\mathcal{L}^{y}\left(x^{\prime}\right)\right] d H^{f} \leq H^{w}(x)-H^{w}\left(x^{\prime}\right) \qquad \forall  (x',x]\subseteq\mathcal{X}\]
+		\item \textcolor{red}{Feasible Labor Demand}
+		\begin{wideitemize}
+			\item Consider an interval of worker types $(x',x]$
+			\item The demand of firm $y$ for those workers is $\mathcal{L}^y(x) - \mathcal{L}^y(x')$
+			\pause
+			\item This implies a way to evaluate if a labor demand schedule $\{\mathcal{L}^y\}_{y\in \mathcal{Y}}$ is feasible:\[\int_{y}\left[\mathcal{L}^{y}(x)-\mathcal{L}^{y}\left(x^{\prime}\right)\right] d H^{f} \leq H^{w}(x)-H^{w}\left(x^{\prime}\right) \qquad \forall  (x',x]\subseteq\mathcal{X}\]
+		\end{wideitemize}
 	\end{wideitemize}
 	% Note that for any interval of worker types $(x', x]$, a firm of type $y$ has a demand for such workers of $\mathcal{L}^y(x)-\mathcal{L}^y(x')$ then the aggregate demand for such workers is the integral over all firms $y\in \mathcal{Y}$. 
 	% This implies a way to evaluate if a labor demand schedule $\{\mathcal{L}^y\}_{y\in \mathcal{Y}}$ is feasible:$$\int_{y}\left[\mathcal{L}^{y}(x)-\mathcal{L}^{y}\left(x^{\prime}\right)\right] d H^{f} \leq H^{w}(x)-H^{w}\left(x^{\prime}\right) \qquad \forall  (x',x]\subseteq\mathcal{X}$$
@@ -319,16 +323,19 @@
 
 % Slide equilibrium definition
 \begin{frame}{Equilibrium Definition}
-	An equilibrium is a tuple of functions $\left(w, \theta^{y}, \mathcal{R}^{y}, \mathcal{L}^{y}\right)$ consisting of a non-negative wage schedule $w(x)$ as well as intensity functions $\theta^{y}(x)$ and resource allocations $\mathcal{R}^{y}(x)$ with associated feasible labor demands $\mathcal{L}^{y}(x)$ (determined as in \eqref{labor_demand}) such that:
-	\pause
-\begin{wideitemize}
-    \item[1]\textbf{Optimality:} Given the wage schedule $w(x)$, for any $y$, the combination $\left(\theta^{y}, \mathcal{R}^{y}\right)$ solves:$$\max _{\theta y, \mathcal{R}^{y}} \int\left[f\left(x, y, \theta^{y}(x)\right)-w(x) \theta^{y}(x)\right] d \mathcal{R}^{y}(x)$$
-	\item[2] \textbf{Market Clearing:} For any $(x',x]\subseteq\mathcal{X}$
-    \[\text{If } w(x)>0 \text{ a.e in } (x', x]  \quad \implies \quad   \int_{y}\left[\mathcal{L}^{y}(x)-\mathcal{L}^{y}\left(x^{\prime}\right)\right] d H^{f} = H^{w}(x)-H^{w}\left(x^{\prime}\right) \]
-\end{wideitemize}
+	\begin{wideitemize}
+		\item An equilibrium is a tuple of functions $\left(w, \theta^{y}, \mathcal{R}^{y}, \mathcal{L}^{y}\right)$ consisting of a non-negative wage schedule $w(x)$ as well as intensity functions $\theta^{y}(x)$ and resource allocations $\mathcal{R}^{y}(x)$ with associated feasible labor demands $\mathcal{L}^{y}(x)$ (determined as in \eqref{labor_demand}) such that:
+		\pause
+		\begin{wideitemize}
+			\item \textbf{Optimality:} Given the wage schedule $w(x)$, for any $y$, the combination $\left(\theta^{y}, \mathcal{R}^{y}\right)$ solves:$$\max _{\theta^y, \mathcal{R}^{y}} \int\left[f\left(x, y, \theta^{y}(x)\right)-w(x) \theta^{y}(x)\right] d \mathcal{R}^{y}(x)$$
+			\pause
+			\item \textbf{Market Clearing:} For any $(x',x]\subseteq\mathcal{X}$
+			\[\text{If } w(x)>0 \text{ a.e in } (x', x]  \quad \implies \quad   \int_{y}\left[\mathcal{L}^{y}(x)-\mathcal{L}^{y}\left(x^{\prime}\right)\right] d H^{f} = H^{w}(x)-H^{w}\left(x^{\prime}\right) \]
+		\end{wideitemize}
+	\end{wideitemize}
 \end{frame}
 
-\subsubsection{Characterization of Equilibrium}
+\subsubsection{Sorting Condition}
 % Slide equilibrium characterization
 \begin{frame}{Equilibrium Characterization}
 	\begin{wideitemize}
@@ -353,7 +360,7 @@
 	\only<1>{
 		\textcolor{red}{\textbf{Proposition 1}} \label{prop1}
 		\begin{wideitemize}
-			\item If output $F$ is strictly increasing in $x$ and $y$ and the type distributions have nonzero continuous densities, then almost all active firm types y hire exactly one worker type and reach unique size $l(y)$ in an assortative equilibrium.
+			\item If output $F$ is strictly increasing in $x$ and $y$ and the type distributions have nonzero continuous densities, then almost all active firm types y hire exactly one worker type and reach unique size $l(y)$ in an \textbf{assortative} equilibrium.
 			\item There is an injective matching function $\mu:\mathcal{\tilde{X}}\to\mathcal{\tilde{Y}}$, between the subset of hired workers and active firms.
 		\end{wideitemize}
 	}
@@ -378,7 +385,6 @@
 	}
 \end{frame}
 
-\subsubsection{Assortativity Characterization}
 % Slide Conditions for assortative equilibrium
 \begin{frame}[label=condition_assort]{Conditions for Assortative Equilibrium}
 	\begin{wideitemize}
@@ -392,6 +398,7 @@
 		\item Note that a \textbf{PAM} equilibrium requires $\mu'(x)>0$, this implies a necessary condition: \[f_{\theta \theta}f_{x y} - f_{y \theta}\left(f_{x \theta}-\frac{f_{x}}{\theta(x)}\right) < 0\]
 
 		\item We can write this condition in terms of $F$ \hyperlink{appendix_algebra_from_f_to_F<1>}{\beamergotobutton{Details}} to deal with the potential endogeneity of $\theta(x)$: \[F_{x y} > \frac{F_{y l} F_{x r}}{F_{l r}}\]
+		\pause
 		\item We have found a necessary condition for the equilibirum matching to be \textbf{PAM}, tunrs out that this is also a sufficient condition.
 		}
 	\end{wideitemize}
@@ -423,7 +430,7 @@
 		\only<3>{
 		\begin{wideitemize}
 			\item Consider some matching $(x,y,\theta)$ such that a total measure $r$ of resources is deployed in this match, the output generated is \[F(x,y,\theta r, r) = r f(x,y,\theta)\]
-			\item We can show \hyperlink{appendix_proof_prop_2<1>}{\beamergotobutton{Details}} that the marginal change of shifting an optimal measure of workers from firm $y$ to firm $\hat{y}$:
+			\item We can show \hyperlink{appendix_proof_prop_2<1>}{\beamergotobutton{Details}} that the marginal change of shifting an optimal measure of workers of type $x$  from firm $y$ to firm $\hat{y}$:
 
 			\begin{equation}\label{beta_defin}
 			\beta(\hat{y};x,y,\theta) = f(x,\hat{y}, \hat{\theta}) - \hat{\theta}f_\theta(x,y,\theta) \quad \text{where} \quad f_\theta(x,y,\theta)=f_\theta(x,\hat{y},\hat{\theta})
@@ -433,7 +440,7 @@
 	}
 	\only<4>{
 		\begin{wideitemize}
-			\item Suppose that equilibrium matching is not \textbf{PAM}, i.e  $x_{1}$ is matched to $y_{1}$ at intensity $\theta_{1}$ and $x_{2}$ to $v_{2}$ at intensity $\theta_{2}$, but $x_{1}>x_{2}$ while $y_{1}<y_{2}$, for this match to be efficient the following two inequalities mus \textbf{simultaneously} hold:
+			\item Suppose that equilibrium matching is not \textbf{PAM}, i.e  $x_{1}$ is matched to $y_{1}$ at intensity $\theta_{1}$ and $x_{2}$ to $y_{2}$ at intensity $\theta_{2}$, but $x_{1}>x_{2}$ while $y_{1}<y_{2}$, for this match to be efficient the following two inequalities mus \textbf{simultaneously} hold:
 
 			\begin{equation}\label{beta_y1}
 				\beta(y_1; x_2, y_2, \theta_2) \leq \beta(y_1; x_1, y_1, \theta_1) 
@@ -448,19 +455,86 @@
 
 \subsubsection{Equilibrium Assignment}
 % Slide Equilibrium Assignment
-\begin{frame}{Equilibrium Assignment}
+\begin{frame}[label=eq_assignment]{Equilibrium Assignment}
+	\only<1>{
+		\begin{wideitemize}
+			\item This model deals with both the intensive and the extensive margin. 
+			\item Assortativity is not enough to characterize who matches with whom in equilibrium.
+			\item Firms could hire more or fewer workers. 
+			\item We will characterize the matching with a system of differential equations.
+		\end{wideitemize}
+	}
+	\only<2>{
+			\begin{wideitemize}
+				\item Since the matching $y = \mu(x)$, is singled valued we have  $l^y(x) = \theta(x)\mathbbm{1}_{\{y=\mu(x)\}}$
+				\item We can show \hyperlink{appendix_eq_assignment<1>}{\beamergotobutton{Details}} that in equilibrium the demand of labor in any interval $(x, \overline{x}]$ is 
+				\[\int_{y}\left[\mathcal{L}^{y}(x)-\mathcal{L}^{y}\left(x^{\prime}\right)\right] d H^{f} = \int_{\mu(x)}^{\overline{y}}{ \theta(\mu^{-1}(y)) dH^f }_
+				= \textcolor{green}{\underbrace{ H^w(\overline{x}) -  H^w(x) }_{\text{by Labor Market Clearing}}} \]
+				\item Differentiating w.r.t $x$ both sides and solving for $\mu'(x)$:
+				$$\mu'(x) = \frac{\mathcal{H}(x)}{\theta(x)}\qquad \text{with} \qquad \mathcal{H}(x)= \frac{h^{w}(x)}{h^{f}(\mu(x))}$$    
+			\end{wideitemize}	
+	}
+	\only<3>{
+			\begin{wideitemize}
+				\item From the first order condition of the problem we have:\[w^{\prime}(x)=\frac{f_{x}}{\theta(x)} \]
+				\item Using the differenciated version of the FOC and some algebra \hyperlink{appendix_eq_assignment<2>}{\beamergotobutton{Details}} we get:$$
+				\theta^{\prime}(x)=\frac{\mathcal{H}(x) f_{x y}}{\theta(x) f_{x \theta}}
+				$$
+		\end{wideitemize}
+	}
+	\only<4>{
+		\begin{wideitemize}
+			\item The system of differential equations:
+				$$
+				\left\{\begin{aligned}
+				\mu^{\prime}(x) &=\frac{\mathcal{H}(x)}{\theta(x)} \\
+				w^{\prime}(x) &=\frac{f_{x}}{\theta(x)} \\
+				\theta^{\prime}(x) &=\frac{\mathcal{H}(x) f_{x y}}{\theta(x) f_{x \theta}}
+				\end{aligned}\right.
+				$$
+				characterizes the equilibrium.
+		\end{wideitemize}
+	}
+
 \end{frame}
 
 % SIMULATION
 \section{Simulation}
 \subsection{Simulation Strategy}
-\begin{frame}{Title}
+\begin{frame}{Simulation Strategy}
+	\begin{wideitemize}
+		\only<1>{
+		\item We want to numerically solve a system of ODE's.
+		\item We need an initial condition:
+			$$\mu(\underline{x}) = \underline{\mu} \qquad \text{and} \qquad \theta(\underline{x}) = \underline{\theta}$$
+		\item Positive assortative matching gives us one initial condition:
+		
+			$$\mu(\underline{x}) = \underline{y}$$
+		
+		\item But we are still unable to pindown $\underline{\theta}$.
+		}
+		\only<2>{
+		\item We know a terminal condition for $\mu(x)$:
+		
+			\[\mu(\overline{x}) = \overline{y}\]
+		
+		\item This turns the initial value problem into a boundary condition problem. 
+		
+		\item We can solve using a shooting algorithm.
+		
+		\item The idea of the shooting algorithm is to select an initial value for $\underline{\theta}$, solve the system, and compare the obtained value of $\mu(\overline{x})$ with $\overline{y}$ and iterativelly update $\underline{\theta}$ until convergence.		
+		}
+	\end{wideitemize}
+\end{frame}
+
+\subsection{Simulation Results}
+\begin{frame}{Simulation Results}
 	\begin{wideitemize}
 		
 		\item{} To simulate the model we will use the following production function:
 				\[f(x,y,\theta) = \left(\omega_{A} x^{\left(1-\sigma_{A}\right) / \sigma_{A}}+\left(1-\omega_{A}\right) y^{\left(1-\sigma_{A}\right) / \sigma_{A}}\right)^{\sigma_{A} /\left(1-\sigma_{A}\right)} \theta^{\omega_{B}}\]
-	
-		\item{}	Computing condition \ref{pam_cond_simple} for this production function we get:
+		\pause
+		\item{}	Computing the sorting condition for this production function we get:
 				\begin{equation}
 					-\frac{\textcolor{red}{\left(1-\sigma _A\right)} \left(1-\omega _A\right) \omega
 					_A x^{\frac{1}{\sigma _A}} y^{\frac{1}{\sigma _A}} \theta
@@ -471,13 +545,12 @@
 				y^{\frac{1}{\sigma _A}}\right)+x y^{\frac{1}{\sigma
 				_A}}\right){}^2} > 0
 				\end{equation}
-	
+			\pause
 		\item{} Clearly the condition for \textbf{PAM} holds if $\sigma_A < 1$ and we will have \textbf{NAM} if $\sigma_A > 1$.
 	\end{wideitemize}
 \end{frame}
 
-\subsection{Simulation Results}
-\begin{frame}{Effect of changing $\omega_A$} 
+\begin{frame}[label=change_omega_A]{Effect of changing $\omega_A$} 
 	\only<1>{
 	\begin{wideitemize}
 		\item{} When $\omega_A = 0.5$ workers and firms are equally weighted.
@@ -513,6 +586,31 @@
 	\begin{wideitemize}
 		\item{} \textbf{Parametrization} $x,y \sim U[0,1]$, $\omega_B = 0.5$ and $\sigma_A = 0.9$
 		\only<3>{\item{} \hyperlink{appendix_wage_change_omega_A}{\beamergotobutton{Effect in wages}}}
+	\end{wideitemize}
+\end{frame}
+
+\begin{frame}[label=change_sigma_A]{Effect of changing $\sigma_A$} 
+	\begin{wideitemize}
+		\item{} Higher values of $\sigma_A$ means that higher type workers are more attractive.
+		\item{}  Since the supply of labor constrained $\implies$ stealing of workers.
+	\end{wideitemize}
+	\centering
+	\only<1>{\resizebox{12.5cm}{!}{
+		\includegraphics{figures/plot_positive_σ_A_1.pdf}
+	}
+	}
+	\only<2>{\resizebox{12.5cm}{!}{
+		\includegraphics{figures/plot_positive_σ_A_2.pdf}
+	}
+	}
+	\only<3>{\resizebox{12.5cm}{!}{
+		\includegraphics{figures/plot_positive_σ_A_3.pdf}
+	}
+	}
+	
+	\begin{wideitemize}
+		\item{} \textbf{Parametrization} $x,y \sim U[0,1]$, $\omega_B = 0.5$ and $\omega_A = 0.75$
+		\only<3>{\item{} \hyperlink{appendix_wage_change_sigma_A}{\beamergotobutton{Effect in wages}}}
 	\end{wideitemize}
 \end{frame}
 
@@ -553,7 +651,7 @@
 	\hyperlink{condition_assort<2>}{\beamergotobutton{Back}}
 \end{frame}
 
-\begin{frame}[label=appendix_proof_prop_2]{slide 3}oo
+\begin{frame}[label=appendix_proof_prop_2]{slide 3}
 	\only<1>{
 		\hyperlink{main_result<3>}{\beamergotobutton{Back}}
 	}
@@ -562,16 +660,22 @@
 	}
 \end{frame}
 
+\begin{frame}[label=appendix_eq_assignment]{slide 4}
+	\only<1>{
+		\hyperlink{eq_assignment<2>}{\beamergotobutton{Back}}
+	}
+	\only<2>{
+		\hyperlink{eq_assignment<3>}{\beamergotobutton{Back}}
+	}
+\end{frame}
+
 \begin{frame}[label=appendix_wage_change_omega_A]{Use it to intimidate audiences!}
-	\begin{wideitemize}
-	  \item[] Now you can make it clear you've done a shitload of work
-		\begin{itemize}
-		\item[]  without having to show everything! \hyperlink{appendix_start}{\beamergotobutton{Back}}
-		\end{itemize}
-	  \item[] You label a frame with the \texttt{[label=name]} option, and then point a link to it
-	  \item[] You can make an object a link using the \texttt{\textbackslash hyperlink\{label\}\{object\}} command
-	\end{wideitemize}
-  \end{frame}
+	\hyperlink{change_omega_A<3>}{\beamergotobutton{Back}}
+\end{frame}
+
+\begin{frame}[label=appendix_wage_change_sigma_A]{Use it to intimidate audiences!}
+	\hyperlink{change_sigma_A<3>}{\beamergotobutton{Back}}
+\end{frame}
 
 
 \end{document}
