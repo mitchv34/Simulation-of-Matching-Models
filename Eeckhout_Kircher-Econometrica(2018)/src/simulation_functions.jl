@@ -14,6 +14,7 @@ mutable struct Solution
     Π::Vector{Float64} # Equilibrium profits Π(x, μ(x))    
 end
 
+Base.copy(s::Solution) = Solution(s.x, s.μ, s.θ, s.w, s.Π)
 
 mutable struct Solver
     
@@ -224,21 +225,21 @@ function shooting_method(solver, param_values; tol=1e-5, max_iter = 100, saveat=
     sol = solve_IVP(sys, u0, xspan, param_values)
 
 	n = 0
-	println("θ(1) = $(u0[sys_vars[:θ]])")
+	# println("θ(1) = $(u0[sys_vars[:θ]])")
 	while (abs(err) > tol) & (n < max_iter)
 		n += 1
 		sol = solve_IVP(sys, u0, xspan, param_values)
 		err = sol(100)[2] - 100
 		if err < 0
-			print("err = $err < 0 ")
+			# print("err = $err < 0 ")
 			firm_size_upper = u0[sys_vars[:θ]]
 			u0[sys_vars[:θ]] = (firm_size_lower + firm_size_upper)/2
-			println("next θ(1) = $(u0[sys_vars[:θ]])")
+			# println("next θ(1) = $(u0[sys_vars[:θ]])")
 		else
-			print("err = $err > 0 ")
+			# print("err = $err > 0 ")
 			firm_size_lower = u0[sys_vars[:θ]]
 			u0[sys_vars[:θ]] = (firm_size_lower + firm_size_upper)/2
-			println("next θ(1) = $(u0[sys_vars[:θ]])")
+			# println("next θ(1) = $(u0[sys_vars[:θ]])")
 		end
 		# u0[sys_vars[:θ]] = guess_firm_size
 		# println("Iteration: $n, err=$err, θ(1) = $guess_firm_size, μ(100) =$(sol(100)[2])")
@@ -281,8 +282,8 @@ function Solution!(model::Model, param_values)
 
     nk = model.solver.nk
     # Create a matrix of solution
-	model.solver.solution.x = sol.t
-    model.solver.solution.θ = sol[θ]
-    model.solver.solution.μ = sol[μ]
+	model.solver.solution.x = copy(sol.t)
+    model.solver.solution.θ = copy(sol[θ])
+    model.solver.solution.μ = copy(sol[μ])
 end
 
