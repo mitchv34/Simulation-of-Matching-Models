@@ -3,7 +3,7 @@ using Plots
 using Parameters
 using DataFrames
 using Term # You dont really need this package
-
+using Latexify
 
 mutable struct Params
 
@@ -55,18 +55,29 @@ struct Equilibrium4 # There are missing variables
 
 end
 
-# function plot_eq(eq_df::DataFrame; path="./Albrecht_Vroman_2002/figures")
 
-# end
-
-
-# function plot_eq(eq::Equilibrium4; path="./Albrecht_Vroman_2002/figures")
+function plot_eq(list_eq::Array{Equilibrium4}; path="./Albrecht_Vroman_2002/figures/")
     
-#     eq_df = eq_to_df(eq)
+    eq_df = eq_to_df(list_eq)
 
-#     plot_eq(eq_df, path)
+    title = list_eq[1].type
 
-# end
+    println("Ploting: $title")
+
+    cols = names(eq_df);
+
+    x = cols[2]
+    ys = cols[3:end]
+
+    for y in ys
+        println("\t Generating plot for $(y)")
+        plot(eq_df[:, x], eq_df[:, y], title = title, lw = 2, legend = false)
+        xlabel!("$(latexify(x))")
+        ylabel!("$(latexify(y))")
+        savefig(path*"$(title) $(y)")
+    end
+
+end
 
 function eq_to_df(list_eq::Array{Equilibrium4})
 
@@ -84,10 +95,12 @@ function eq_to_df(list_eq::Array{Equilibrium4})
         push!(w₂₂_list, list_eq[i].w₂₂);# push!(Y_list, list_eq[i].Y, );
     end
 
+
+
     return DataFrame(
-        [   
-            :s₁  =>s₁_list,
-            :s₂ => s₂_list,
+        [  
+            :s₁  => s₁_list,
+            :s₂  => s₂_list,
             :θ   => θ_list,
             :m_θ => m_θ_list,
             :u   => u_list,
@@ -99,7 +112,6 @@ function eq_to_df(list_eq::Array{Equilibrium4})
             # :Y   => Y_list,
         ]
     )
-
 end
 
 function cs_equilibirum(s_2::Float64)
@@ -148,12 +160,6 @@ function cs_equilibirum(s_2::Float64)
 end
 
 
-
-
-
-termshow(cs_equilibirum(1.20))
-
-
 function es_equilibirum(s_2::Float64)
 
     params = Params(s_2)
@@ -196,6 +202,5 @@ end
 
 eq_list = es_equilibirum.(1.30:0.01:2.0)
 
-eq_df = eq_to_df(eq_list)
-
-plot(eq_df.s₂, eq_df.ϕ)
+plot_eq(eq_list)
+-
