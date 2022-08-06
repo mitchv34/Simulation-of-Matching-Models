@@ -153,7 +153,7 @@ function cs_equilibirum(s_2::Float64)
     w₂₁ = w(s₁, rUs₂, params)
     w₂₂ = w(s₂, rUs₂, params)
 
-    # Calculate Agregate Production
+    # TODO: Calculate Agregate Production
 
     return Equilibrium4("Cross-Skill Matching", s₁ ,s₂, θ_eq, m_θ_eq, u_eq, γ_eq, ϕ_eq, w₁₁, w₂₁, w₂₂)
 
@@ -194,7 +194,7 @@ function es_equilibirum(s_2::Float64)
     w₂₁ = NaN
     w₂₂ = w(s₂, rUs₂, params)
 
-    # Calculate Agregate Production
+    # TODO: Calculate Agregate Production
 
     return Equilibrium4("Ex-Post Segmentation", s₁ ,s₂, θ_eq, m_θ_eq, u_eq, γ_eq, ϕ_eq, w₁₁, w₂₁, w₂₂)
 
